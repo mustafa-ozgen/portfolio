@@ -2,7 +2,7 @@
 let currentLanguage = 'en';
 
 // Desteklenen medya dosya uzantıları
-const supportedExtensions = ['.jpg', '.jpeg', '.png', '.gif', '.mp4'];
+const supportedExtensions = ['.jpg', '.jpeg', '.png', '.gif', '.mp4', '.webp'];
 
 // Projeleri yükle
 async function loadProjects() {
@@ -126,6 +126,27 @@ async function loadProjects() {
     }
 }
 
+// Profil fotoğrafını yükle
+async function loadProfileImage() {
+    const profileImage = document.getElementById('profileImage');
+    const imageExtensions = ['.jpg', '.jpeg', '.png', '.webp'];
+    
+    for (const ext of imageExtensions) {
+        try {
+            const response = await fetch(`images/profile${ext}`);
+            if (response.ok) {
+                const img = document.createElement('img');
+                img.src = `images/profile${ext}`;
+                img.alt = 'Profile Picture';
+                profileImage.appendChild(img);
+                break;
+            }
+        } catch (error) {
+            console.log(`Profile image with extension ${ext} not found`);
+        }
+    }
+}
+
 // Sayfa değiştirme fonksiyonu
 function showPage(pageId) {
     const pages = document.querySelectorAll('.page');
@@ -195,5 +216,6 @@ window.onload = () => {
     // Sonra sayfayı göster
     showPage('about');
     loadProjects();
+    loadProfileImage();
 };
   

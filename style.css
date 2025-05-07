@@ -369,4 +369,28 @@ h1 {
     height: 100%;
     object-fit: contain;
 }
+
+.profile-container {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 2rem;
+}
+
+.profile-image {
+    width: 200px;
+    height: 200px;
+    border: 1px solid var(--primary-color);
+    border-radius: 5px;
+    overflow: hidden;
+    box-shadow: 0 0 10px var(--glow-color);
+    filter: grayscale(0.3) sepia(0.2) hue-rotate(90deg) saturate(0.8);
+    background: var(--terminal-bg);
+}
+
+.profile-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
   
