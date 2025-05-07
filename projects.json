@@ -10,6 +10,17 @@
                 "en": "A modern portfolio website with a retro terminal theme. Features responsive design, dynamic project loading, and interactive terminal-style interface.",
                 "tr": "Retro terminal temasına sahip modern bir portfolyo web sitesi. Duyarlı tasarım, dinamik proje yükleme ve interaktif terminal tarzı arayüz özellikleri içerir."
             }
+        },
+        {
+            "folder": "wooden-dining-set",
+            "title": {
+                "en": "Stylized Wooden Dining Set 3D Pack",
+                "tr": "Stilize Ahşap Yemek Takımı 3D Paketi"
+            },
+            "description": {
+                "en": "A high-quality, stylized 3D asset pack of a wooden dining set. Optimized for Unity and Unreal Engine, perfect for games and architectural visualization.",
+                "tr": "Yüksek kaliteli, stilize bir ahşap yemek takımı 3D varlık paketi. Unity ve Unreal Engine için optimize edilmiştir, oyunlar ve mimari görselleştirme için idealdir."
+            }
         }
     ]
-} 
+}
