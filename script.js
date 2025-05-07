@@ -174,7 +174,13 @@ function changeLanguage(lang) {
         if (element.tagName === 'IMG') {
             element.alt = element.dataset[lang];
         } else {
-            element.innerHTML = element.dataset[lang];
+            const newText = element.dataset[lang];
+            if (element.tagName === 'H1') {
+                // Başlık için typeWriter efektini kullan
+                typeWriter(element, newText);
+            } else {
+                element.innerHTML = newText;
+            }
         }
     });
     
@@ -184,16 +190,10 @@ function changeLanguage(lang) {
 
 // Sayfa yüklendiğinde
 window.onload = () => {
+    // Önce dili ayarla
+    changeLanguage('en');
+    // Sonra sayfayı göster
     showPage('about');
     loadProjects();
-    
-    // Terminal başlık efekti
-    const title = document.querySelector('h1');
-    if (title) {
-        typeWriter(title, title.textContent);
-    }
-    
-    // Varsayılan dili ayarla
-    changeLanguage('en');
 };
   
