@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Mustafa Özgen Portfolio</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+<body>
+  <div class="terminal">
+    <div class="language-selector">
+      <button onclick="changeLanguage('en')" class="lang-btn active" data-lang="en">EN</button>
+      <button onclick="changeLanguage('tr')" class="lang-btn" data-lang="tr">TR</button>
+    </div>
+
+    <div class="menu">
+      <button onclick="showPage('about')" data-tr="1. Ben Kimim" data-en="1. About Me">1. Ben Kimim</button>
+      <button onclick="showPage('projects')" data-tr="2. Projelerim" data-en="2. Projects">2. Projelerim</button>
+      <button onclick="showPage('contact')" data-tr="3. İletişim" data-en="3. Contact">3. İletişim</button>
+    </div>
+
+    <div id="about" class="page">
+      <h1 data-tr="Ben Kimim?" data-en="About Me">Ben Kimim?</h1>
+      <p data-tr="Merhaba, ben Mustafa Özgen.<br />
+      Yazılım, 3D modelleme ve elektronik sistemler üzerine çalışıyorum.<br />
+      Hafta içi İstanbul'da uzaktan çalışan bir mühendisim.<br />
+      Boş zamanlarımda yaratıcı projeler üretmeyi seviyorum." 
+         data-en="Hello, I'm Mustafa Özgen.<br />
+      I work on software, 3D modeling, and electronic systems.<br />
+      I'm an engineer working remotely in Istanbul during weekdays.<br />
+      I enjoy creating creative projects in my free time.">
+      </p>
+    </div>
+
+    <div id="projects" class="page hidden">
+      <h1 data-tr="Projelerim" data-en="Projects">Projelerim</h1>
+      <div id="projects-container">
+        <!-- Projeler JavaScript ile buraya eklenecek -->
+      </div>
+    </div>
+
+    <div id="contact" class="page hidden">
+      <h1 data-tr="İletişim" data-en="Contact">İletişim</h1>
+      <p>Email: mustafa@example.com</p>
+      <p>GitHub: github.com/mustafaozgen</p>
+      <p>LinkedIn: linkedin.com/in/mustafaozgen</p>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

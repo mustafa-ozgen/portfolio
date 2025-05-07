@@ -1,0 +1,15 @@
+{
+    "projects": [
+        {
+            "folder": "portfolio-website",
+            "title": {
+                "en": "Terminal-Style Portfolio Website",
+                "tr": "Terminal Tarzı Portfolyo Web Sitesi"
+            },
+            "description": {
+                "en": "A modern portfolio website with a retro terminal theme. Features responsive design, dynamic project loading, and interactive terminal-style interface.",
+                "tr": "Retro terminal temasına sahip modern bir portfolyo web sitesi. Duyarlı tasarım, dinamik proje yükleme ve interaktif terminal tarzı arayüz özellikleri içerir."
+            }
+        }
+    ]
+} 
