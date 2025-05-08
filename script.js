@@ -44,7 +44,7 @@ async function loadProjects() {
                                 if (isVideo) {
                                     mediaElement.innerHTML = `
                                         <div class="video-container">
-                                            <video>
+                                            <video muted>
                                                 <source src="${mediaPath}" type="video/mp4">
                                             </video>
                                             <button class="play-button">
