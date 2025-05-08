@@ -1,25 +1,14 @@
 {
     "projects": [
         {
-            "folder": "portfolio-website",
+            "folder": "yesilcam-telefonda",
             "title": {
-                "en": "Terminal-Style Portfolio Website",
-                "tr": "Terminal Tarzı Portfolyo Web Sitesi"
+                "en": "Yeşilçam on the Phone",
+                "tr": "Yeşilçam Telefonda"
             },
             "description": {
-                "en": "A modern portfolio website with a retro terminal theme. Features responsive design, dynamic project loading, and interactive terminal-style interface.",
-                "tr": "Retro terminal temasına sahip modern bir portfolyo web sitesi. Duyarlı tasarım, dinamik proje yükleme ve interaktif terminal tarzı arayüz özellikleri içerir."
-            }
-        },
-        {
-            "folder": "wooden-dining-set",
-            "title": {
-                "en": "Stylized Wooden Dining Set 3D Pack",
-                "tr": "Stilize Ahşap Yemek Takımı 3D Paketi"
-            },
-            "description": {
-                "en": "A high-quality, stylized 3D asset pack of a wooden dining set. Optimized for Unity and Unreal Engine, perfect for games and architectural visualization.",
-                "tr": "Yüksek kaliteli, stilize bir ahşap yemek takımı 3D varlık paketi. Unity ve Unreal Engine için optimize edilmiştir, oyunlar ve mimari görselleştirme için idealdir."
+                "en": "Developed for the Istanbul Cinema Museum, this interactive installation uses Raspberry Pi, Python, analog rotary phones, motion and receiver sensors, and an audio output system. When visitors lift the handset of a vintage phone, a scene from a Yeşilçam movie plays on a screen while the actor's voice is heard through the receiver. This project merges nostalgic Turkish cinema with interactive technology, enhancing the museum experience through a tangible and memorable interface.",
+                "tr": "İstanbul Sinema Müzesi için geliştirilen bu interaktif kurulumda Raspberry Pi, Python, analog çevirmeli telefon donanımı, hareket ve ahize sensörleri ile ses çıkış sistemi kullanıldı. Ziyaretçiler antika telefonun ahizesini kaldırdığında, bir Yeşilçam sahnesi ekranda oynatılırken oyuncunun sesi ahizeden duyuluyor. Bu proje, nostaljik Türk sinemasını etkileşimli teknolojiyle birleştirerek müze deneyimini somut ve unutulmaz bir arayüzle zenginleştiriyor."
             }
         }
     ]
