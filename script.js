@@ -23,7 +23,7 @@ async function loadProjects() {
         
         container.innerHTML = ''; // Mevcut projeleri temizle
         
-        data.projects.forEach(project => {
+        for (const project of data.projects) {
             console.log('Processing project:', project.folder);
             const projectElement = document.createElement('div');
             projectElement.className = 'project';
@@ -40,13 +40,16 @@ async function loadProjects() {
             // Proje klasöründeki medya dosyalarını kontrol et
             const projectContent = projectElement.querySelector('.project-content');
             
+            // Medya dosyalarını toplamak için dizi
+            const mediaPromises = [];
+            
             // Her uzantı için 1'den 10'a kadar dosya kontrolü yap
             for (let i = 1; i <= 10; i++) {
-                supportedExtensions.forEach(ext => {
+                for (const ext of supportedExtensions) {
                     const mediaPath = `projects/${project.folder}/${i}${ext}`;
                     
-                    // Dosyanın varlığını kontrol et
-                    fetch(mediaPath)
+                    // Dosyanın varlığını kontrol et ve promise olarak ekle
+                    const mediaPromise = fetch(mediaPath)
                         .then(response => {
                             if (response.ok) {
                                 console.log('Media file found:', mediaPath);
@@ -80,7 +83,7 @@ async function loadProjects() {
                                     
                                     playButton.addEventListener('click', () => {
                                         if (video.paused) {
-                                            video.currentTime = 0; // Oynatma başladığında videoyu başa sar
+                                            video.currentTime = 0;
                                             video.play();
                                             playButton.style.display = 'none';
                                         }
@@ -111,16 +114,15 @@ async function loadProjects() {
                                                         document.msExitFullscreen();
                                                     }
                                                 }
-                                            } else if (!video.paused) {
-                                                video.pause();
-                                                playButton.style.display = 'flex';
                                             }
+                                            video.pause();
+                                            playButton.style.display = 'flex';
                                         }
                                         lastClick = currentTime;
                                     });
                                     
                                     video.addEventListener('ended', () => {
-                                        video.currentTime = thumbnailTime; // Video bittiğinde thumbnail'e dön
+                                        video.currentTime = thumbnailTime;
                                         playButton.style.display = 'flex';
                                     });
 
@@ -133,15 +135,32 @@ async function loadProjects() {
                                     `;
                                 }
                                 
-                                projectContent.appendChild(mediaElement);
+                                return { index: i, element: mediaElement };
                             }
+                            return null;
                         })
                         .catch(error => {
                             console.log(`Media file not found: ${mediaPath}`, error);
+                            return null;
                         });
-                });
+                    
+                    mediaPromises.push(mediaPromise);
+                }
             }
-        });
+            
+            // Tüm medya dosyalarının yüklenmesini bekle
+            const mediaResults = await Promise.all(mediaPromises);
+            
+            // Sadece başarılı yüklenen ve null olmayan sonuçları filtrele ve sırala
+            const sortedMedia = mediaResults
+                .filter(result => result !== null)
+                .sort((a, b) => a.index - b.index);
+            
+            // Sıralı medya öğelerini DOM'a ekle
+            sortedMedia.forEach(result => {
+                projectContent.appendChild(result.element);
+            });
+        }
     } catch (error) {
         console.error('Projeler yüklenirken hata oluştu:', error);
     }
