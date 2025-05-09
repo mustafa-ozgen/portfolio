@@ -7,12 +7,24 @@ const supportedExtensions = ['.jpg', '.jpeg', '.png', '.gif', '.mp4', '.webp'];
 // Projeleri yükle
 async function loadProjects() {
     try {
+        console.log('Loading projects...');
         const response = await fetch('projects.json');
+        if (!response.ok) {
+            throw new Error(`HTTP error! status: ${response.status}`);
+        }
         const data = await response.json();
+        console.log('Projects data loaded:', data);
+        
         const container = document.getElementById('projects-container');
+        if (!container) {
+            console.error('Projects container not found!');
+            return;
+        }
+        
         container.innerHTML = ''; // Mevcut projeleri temizle
         
         data.projects.forEach(project => {
+            console.log('Processing project:', project.folder);
             const projectElement = document.createElement('div');
             projectElement.className = 'project';
             
@@ -37,11 +49,15 @@ async function loadProjects() {
                     fetch(mediaPath)
                         .then(response => {
                             if (response.ok) {
+                                console.log('Media file found:', mediaPath);
                                 const isVideo = ext === '.mp4';
                                 const mediaElement = document.createElement('div');
                                 mediaElement.className = 'project-media';
                                 
                                 if (isVideo) {
+                                    // Video için thumbnail oluştur
+                                    const thumbnailTime = project.videoThumbnailTime || 0;
+                                    
                                     mediaElement.innerHTML = `
                                         <div class="video-container">
                                             <video muted>
@@ -57,8 +73,14 @@ async function loadProjects() {
                                     const playButton = mediaElement.querySelector('.play-button');
                                     const videoContainer = mediaElement.querySelector('.video-container');
                                     
+                                    // Video yüklendiğinde thumbnail'i ayarla
+                                    video.addEventListener('loadedmetadata', () => {
+                                        video.currentTime = thumbnailTime;
+                                    });
+                                    
                                     playButton.addEventListener('click', () => {
                                         if (video.paused) {
+                                            video.currentTime = 0; // Oynatma başladığında videoyu başa sar
                                             video.play();
                                             playButton.style.display = 'none';
                                         }
@@ -70,9 +92,8 @@ async function loadProjects() {
                                         const currentTime = new Date().getTime();
                                         const timeDiff = currentTime - lastClick;
                                         
-                                        // Eğer tıklanan element play butonu değilse
                                         if (e.target !== playButton && e.target !== playButton.querySelector('i')) {
-                                            if (timeDiff < 300) { // 300ms içinde çift tıklama
+                                            if (timeDiff < 300) {
                                                 if (!document.fullscreenElement) {
                                                     if (videoContainer.requestFullscreen) {
                                                         videoContainer.requestFullscreen();
@@ -99,7 +120,7 @@ async function loadProjects() {
                                     });
                                     
                                     video.addEventListener('ended', () => {
-                                        video.currentTime = 0; // Videoyu başa sar
+                                        video.currentTime = thumbnailTime; // Video bittiğinde thumbnail'e dön
                                         playButton.style.display = 'flex';
                                     });
 
@@ -108,15 +129,15 @@ async function loadProjects() {
                                     });
                                 } else {
                                     mediaElement.innerHTML = `
-                                        <img src="${mediaPath}" alt="${project.title[currentLanguage]}" />
+                                        <img src="${mediaPath}" alt="${project.title[currentLanguage]}" loading="lazy" />
                                     `;
                                 }
                                 
                                 projectContent.appendChild(mediaElement);
                             }
                         })
-                        .catch(() => {
-                            // Dosya bulunamadı, sessizce devam et
+                        .catch(error => {
+                            console.log(`Media file not found: ${mediaPath}`, error);
                         });
                 });
             }
