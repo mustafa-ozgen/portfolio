@@ -333,6 +333,74 @@ function typeWriter(element, text, speed = 50) {
     type();
 }
 
+// About me ve deneyimler bilgilerini yükle
+async function loadAboutInfo() {
+    try {
+        const response = await fetch('info.json');
+        if (!response.ok) {
+            throw new Error(`HTTP error! status: ${response.status}`);
+        }
+        const data = await response.json();
+        
+        // About me açıklamasını güncelle
+        const aboutDescription = document.querySelector('#about p[data-tr]');
+        if (aboutDescription) {
+            aboutDescription.innerHTML = data.about[currentLanguage].description;
+        }
+        
+        // Deneyimleri güncelle
+        const experienceContainer = document.querySelector('#about p[data-tr]:last-of-type');
+        if (experienceContainer) {
+            let experienceHTML = '<br /><br /><strong>Profesyonel Deneyim:</strong><br /><br />';
+            
+            data.about[currentLanguage].experience.forEach(exp => {
+                experienceHTML += `<strong>${exp.company}</strong> – ${exp.title}<br />`;
+                
+                // Eğer bu deneyim devam ediyorsa (startDate varsa), süreyi dinamik hesapla
+                if (exp.startDate) {
+                    const duration = calculateExperienceDuration(exp.startDate);
+                    experienceHTML += `${exp.period} (${duration})<br />`;
+                } else {
+                    experienceHTML += `${exp.period}<br />`;
+                }
+                
+                exp.responsibilities.forEach(resp => {
+                    experienceHTML += `• ${resp}<br />`;
+                });
+                
+                experienceHTML += '<br />';
+            });
+            
+            experienceContainer.innerHTML = experienceHTML;
+        }
+    } catch (error) {
+        console.error('About info yüklenirken hata oluştu:', error);
+    }
+}
+
+// Deneyim süresini hesapla
+function calculateExperienceDuration(startDate) {
+    const start = new Date(startDate);
+    const now = new Date();
+    
+    const yearDiff = now.getFullYear() - start.getFullYear();
+    const monthDiff = now.getMonth() - start.getMonth();
+    
+    let totalMonths = yearDiff * 12 + monthDiff;
+    if (now.getDate() < start.getDate()) {
+        totalMonths--;
+    }
+    
+    const years = Math.floor(totalMonths / 12);
+    const remainingMonths = totalMonths % 12;
+    
+    if (years > 0) {
+        return `${years} yıl ${remainingMonths > 0 ? remainingMonths + ' ay' : ''}`;
+    } else {
+        return `${remainingMonths} ay`;
+    }
+}
+
 // Dil değiştirme fonksiyonu
 function changeLanguage(lang) {
     currentLanguage = lang;
@@ -359,6 +427,9 @@ function changeLanguage(lang) {
         }
     });
     
+    // About me ve deneyimleri güncelle
+    loadAboutInfo();
+    
     // Projeleri yeniden yükle
     loadProjects();
 }
@@ -369,6 +440,9 @@ window.onload = () => {
     changeLanguage('en');
     // Sonra sayfayı göster
     showPage('about');
+    
+    // About me ve deneyimleri yükle
+    loadAboutInfo();
     
     // Arka planda projeleri yüklemeye başla
     const loadProjectsPromise = loadProjects();
