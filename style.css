@@ -71,7 +71,7 @@ body {
 
 .language-selector {
     position: absolute;
-    top: 10px;
+    top: -25px;
     right: 10px;
     display: flex;
     gap: 5px;
@@ -313,7 +313,7 @@ h1 {
 
     .language-selector {
         position: absolute;
-        top: 10px;
+        top: -25px;
         right: 10px;
     }
 }
@@ -345,7 +345,7 @@ h1 {
 
     .language-selector {
         position: absolute;
-        top: 8px;
+        top: -25px;
         right: 8px;
     }
 
