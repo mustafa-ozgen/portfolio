@@ -284,12 +284,22 @@ async function loadProfileImage() {
 
 // Sayfa değiştirme fonksiyonu
 function showPage(pageId) {
+    // Önce tüm sayfaları gizle ve scroll pozisyonlarını sıfırla
     const pages = document.querySelectorAll('.page');
     pages.forEach((page) => {
         page.classList.add('hidden');
         page.classList.remove('visible');
+        page.scrollTop = 0;
     });
 
+    // Terminal container'ını bul
+    const terminal = document.querySelector('.terminal');
+    if (terminal) {
+        // Terminal'in scroll pozisyonunu sıfırla
+        terminal.scrollTop = 0;
+    }
+
+    // Aktif sayfayı göster
     const activePage = document.getElementById(pageId);
     if (activePage) {
         activePage.classList.remove('hidden');
@@ -301,7 +311,19 @@ function showPage(pageId) {
             const newText = title.dataset[currentLanguage];
             title.textContent = newText;
         }
+
+        // Sayfanın scroll pozisyonunu sıfırla
+        activePage.scrollTop = 0;
+
+        // Sayfanın içindeki tüm scrollable elementlerin pozisyonunu sıfırla
+        const scrollableElements = activePage.querySelectorAll('.project-content, .project-description');
+        scrollableElements.forEach(element => {
+            element.scrollTop = 0;
+        });
     }
+
+    // Window scroll pozisyonunu sıfırla
+    window.scrollTo(0, 0);
 }
 
 // Terminal efekti için yazı animasyonu
