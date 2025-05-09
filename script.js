@@ -156,11 +156,11 @@ async function loadProjects() {
             projectElement.appendChild(description);
             projectElement.appendChild(projectContent);
             
-            // Debounced event listener for toggle button
-            toggleButton.addEventListener('click', debounce(() => {
+            // Toggle butonu için event listener
+            toggleButton.addEventListener('click', () => {
                 description.classList.toggle('expanded');
                 toggleButton.classList.toggle('expanded');
-            }, 100));
+            });
             
             // Medya dosyalarını toplamak için dizi
             const mediaPromises = [];
