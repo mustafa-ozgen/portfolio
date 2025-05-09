@@ -220,13 +220,23 @@ h1 {
 .project-description {
     max-height: 0;
     overflow: hidden;
-    transition: max-height 0.3s ease-out;
+    transition: all 0.3s ease-out;
     margin-bottom: 0;
+    opacity: 0;
+    border: 1px solid transparent;
+    border-radius: 5px;
+    padding: 0 15px;
+    background: transparent;
 }
 
 .project-description.expanded {
-    max-height: 2000px; /* Yeterince büyük bir değer */
+    max-height: 2000px;
     margin-bottom: 20px;
+    opacity: 1;
+    border-color: var(--primary-color);
+    padding: 15px;
+    background: rgba(0, 255, 157, 0.05);
+    box-shadow: 0 0 10px var(--glow-color);
 }
 
 .toggle-description {
@@ -234,24 +244,43 @@ h1 {
     border: none;
     color: var(--primary-color);
     cursor: pointer;
-    padding: 5px;
+    padding: 5px 10px;
     font-size: 1.2em;
-    transition: transform 0.3s ease;
+    transition: all 0.3s ease;
     display: flex;
     align-items: center;
-    gap: 5px;
+    gap: 8px;
+    border-radius: 5px;
 }
 
 .toggle-description:hover {
     color: var(--glow-color);
+    background: rgba(0, 255, 157, 0.1);
 }
 
-.toggle-description.expanded {
+.toggle-icon {
+    transition: transform 0.3s ease;
+}
+
+.toggle-description.expanded .toggle-icon {
     transform: rotate(180deg);
 }
 
 .toggle-description i {
     font-size: 0.8em;
+}
+
+.toggle-text {
+    font-size: 0.7em;
+    opacity: 0.7;
+    transition: opacity 0.3s ease;
+    font-family: inherit;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.toggle-description.expanded .toggle-text {
+    opacity: 1;
 }
 
 .project-content {
@@ -360,6 +389,14 @@ h1 {
 
     .lang-btn {
         background: var(--terminal-bg);
+    }
+
+    .toggle-description {
+        padding: 5px;
+    }
+    
+    .toggle-text {
+        display: none;
     }
 }
 

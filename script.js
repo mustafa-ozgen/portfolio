@@ -49,7 +49,12 @@ async function loadProjects() {
             // Açıklama toggle butonu
             const toggleButton = document.createElement('button');
             toggleButton.className = 'toggle-description';
-            toggleButton.innerHTML = '<i class="fas fa-chevron-down"></i>';
+            toggleButton.innerHTML = `
+                <div class="toggle-icon">
+                    <i class="fas fa-chevron-down"></i>
+                </div>
+                <span class="toggle-text">${currentLanguage === 'en' ? 'Info' : 'Detay'}</span>
+            `;
             
             // Açıklama
             const description = document.createElement('p');
