@@ -1,3 +1,85 @@
+// Utility functions
+function debounce(func, wait) {
+    let timeout;
+    return function executedFunction(...args) {
+        const later = () => {
+            clearTimeout(timeout);
+            func(...args);
+        };
+        clearTimeout(timeout);
+        timeout = setTimeout(later, wait);
+    };
+}
+
+// Video handling class
+class VideoHandler {
+    constructor(videoElement, playButton, videoContainer) {
+        this.video = videoElement;
+        this.playButton = playButton;
+        this.videoContainer = videoContainer;
+        this.lastClick = 0;
+        this.setupEventListeners();
+    }
+
+    setupEventListeners() {
+        this.playButton.addEventListener('click', () => this.handlePlay());
+        this.videoContainer.addEventListener('click', (e) => this.handleContainerClick(e));
+        this.video.addEventListener('ended', () => this.handleVideoEnd());
+        this.video.addEventListener('pause', () => this.handleVideoPause());
+    }
+
+    handlePlay() {
+        if (this.video.paused) {
+            this.video.currentTime = 0;
+            this.video.play();
+            this.playButton.style.display = 'none';
+        }
+    }
+
+    handleContainerClick(e) {
+        if (e.target !== this.playButton && e.target !== this.playButton.querySelector('i')) {
+            const currentTime = new Date().getTime();
+            const timeDiff = currentTime - this.lastClick;
+            
+            if (timeDiff < 300) {
+                this.toggleFullscreen();
+            }
+            this.video.pause();
+            this.playButton.style.display = 'flex';
+            this.lastClick = currentTime;
+        }
+    }
+
+    toggleFullscreen() {
+        if (!document.fullscreenElement) {
+            if (this.videoContainer.requestFullscreen) {
+                this.videoContainer.requestFullscreen();
+            } else if (this.videoContainer.webkitRequestFullscreen) {
+                this.videoContainer.webkitRequestFullscreen();
+            } else if (this.videoContainer.msRequestFullscreen) {
+                this.videoContainer.msRequestFullscreen();
+            }
+        } else {
+            if (document.exitFullscreen) {
+                document.exitFullscreen();
+            } else if (document.webkitExitFullscreen) {
+                document.webkitExitFullscreen();
+            } else if (document.msExitFullscreen) {
+                document.msExitFullscreen();
+            }
+        }
+    }
+
+    handleVideoEnd() {
+        this.video.currentTime = this.video.dataset.thumbnailTime || 0;
+        this.playButton.style.display = 'flex';
+    }
+
+    handleVideoPause() {
+        this.playButton.style.display = 'flex';
+    }
+}
+
 // Dil ayarları
 let currentLanguage = 'en';
 let isLoadingProjects = false; // Yükleme durumunu takip etmek için
@@ -74,11 +156,11 @@ async function loadProjects() {
             projectElement.appendChild(description);
             projectElement.appendChild(projectContent);
             
-            // Toggle butonu için event listener
-            toggleButton.addEventListener('click', () => {
+            // Debounced event listener for toggle button
+            toggleButton.addEventListener('click', debounce(() => {
                 description.classList.toggle('expanded');
                 toggleButton.classList.toggle('expanded');
-            });
+            }, 100));
             
             // Medya dosyalarını toplamak için dizi
             const mediaPromises = [];
@@ -116,6 +198,8 @@ async function loadProjects() {
                                     const playButton = mediaElement.querySelector('.play-button');
                                     const videoContainer = mediaElement.querySelector('.video-container');
                                     
+                                    video.dataset.thumbnailTime = thumbnailTime;
+                                    
                                     // Video yüklendiğinde thumbnail'i ayarla
                                     video.addEventListener('loadedmetadata', () => {
                                         video.currentTime = thumbnailTime;
@@ -128,54 +212,7 @@ async function loadProjects() {
                                         video.poster = canvas.toDataURL();
                                     });
                                     
-                                    playButton.addEventListener('click', () => {
-                                        if (video.paused) {
-                                            video.currentTime = 0;
-                                            video.play();
-                                            playButton.style.display = 'none';
-                                        }
-                                    });
-                                    
-                                    // Çift tıklama ile tam ekran
-                                    let lastClick = 0;
-                                    videoContainer.addEventListener('click', (e) => {
-                                        const currentTime = new Date().getTime();
-                                        const timeDiff = currentTime - lastClick;
-                                        
-                                        if (e.target !== playButton && e.target !== playButton.querySelector('i')) {
-                                            if (timeDiff < 300) {
-                                                if (!document.fullscreenElement) {
-                                                    if (videoContainer.requestFullscreen) {
-                                                        videoContainer.requestFullscreen();
-                                                    } else if (videoContainer.webkitRequestFullscreen) {
-                                                        videoContainer.webkitRequestFullscreen();
-                                                    } else if (videoContainer.msRequestFullscreen) {
-                                                        videoContainer.msRequestFullscreen();
-                                                    }
-                                                } else {
-                                                    if (document.exitFullscreen) {
-                                                        document.exitFullscreen();
-                                                    } else if (document.webkitExitFullscreen) {
-                                                        document.webkitExitFullscreen();
-                                                    } else if (document.msExitFullscreen) {
-                                                        document.msExitFullscreen();
-                                                    }
-                                                }
-                                            }
-                                            video.pause();
-                                            playButton.style.display = 'flex';
-                                        }
-                                        lastClick = currentTime;
-                                    });
-                                    
-                                    video.addEventListener('ended', () => {
-                                        video.currentTime = thumbnailTime;
-                                        playButton.style.display = 'flex';
-                                    });
-
-                                    video.addEventListener('pause', () => {
-                                        playButton.style.display = 'flex';
-                                    });
+                                    new VideoHandler(video, playButton, videoContainer);
                                 } else {
                                     mediaElement.innerHTML = `
                                         <img src="${mediaPath}" alt="${project.title[currentLanguage]}" loading="lazy" />
