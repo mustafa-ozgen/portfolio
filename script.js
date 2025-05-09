@@ -412,13 +412,13 @@ async function loadContactInfo() {
         
         const contactContainer = document.querySelector('#contact .contact-container');
         if (contactContainer) {
-            const contactData = data.contact[currentLanguage];
+            const contactData = data.contact;
             
             // İş teklifleri bölümü
             const businessSection = document.createElement('div');
             businessSection.className = 'contact-section';
             businessSection.innerHTML = `
-                <h2>${contactData.business.title}</h2>
+                <h2>${contactData.business.titles[currentLanguage]}</h2>
                 <div class="contact-item">
                     <i class="fas fa-envelope"></i>
                     <a href="mailto:${contactData.business.email}" class="terminal-link">${contactData.business.email}</a>
@@ -429,7 +429,7 @@ async function loadContactInfo() {
             const socialSection = document.createElement('div');
             socialSection.className = 'contact-section';
             socialSection.innerHTML = `
-                <h2>${contactData.social.title}</h2>
+                <h2>${contactData.social.titles[currentLanguage]}</h2>
                 <div class="social-links">
                     ${contactData.social.links.map(link => `
                         <a href="${link.url}" target="_blank" class="terminal-link">

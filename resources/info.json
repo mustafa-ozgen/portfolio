@@ -124,67 +124,40 @@
         }
     },
     "contact": {
-        "tr": {
-            "business": {
-                "title": "İş Teklifleri ve Sponsorluk",
-                "email": "mustafaozgen91@gmail.com"
-            },
-            "social": {
-                "title": "Sosyal Medya - İçerikler",
-                "links": [
-                    {
-                        "name": "LinkedIn",
-                        "url": "https://www.linkedin.com/in/mustafa-ozgen/",
-                        "icon": "fab fa-linkedin"
-                    },
-                    {
-                        "name": "Sketchfab",
-                        "url": "https://sketchfab.com/mustafaozgen",
-                        "icon": "fas fa-cube"
-                    },
-                    {
-                        "name": "ArtStation",
-                        "url": "https://mustafaozgen.artstation.com/",
-                        "icon": "fas fa-palette"
-                    },
-                    {
-                        "name": "YouTube",
-                        "url": "https://www.youtube.com/c/MustafaÖzgen",
-                        "icon": "fab fa-youtube"
-                    }
-                ]
+        "business": {
+            "email": "mustafaozgen91@gmail.com",
+            "titles": {
+                "tr": "İş Teklifleri ve Sponsorluk",
+                "en": "Business Inquiries & Sponsorship"
             }
         },
-        "en": {
-            "business": {
-                "title": "Business Inquiries & Sponsorship",
-                "email": "mustafaozgen91@gmail.com"
+        "social": {
+            "titles": {
+                "tr": "Sosyal Medya - İçerikler",
+                "en": "Social Media - Contents"
             },
-            "social": {
-                "title": "Social Media - Contents",
-                "links": [
-                    {
-                        "name": "LinkedIn",
-                        "url": "https://www.linkedin.com/in/mustafa-ozgen/",
-                        "icon": "fab fa-linkedin"
-                    },
-                    {
-                        "name": "Sketchfab",
-                        "url": "https://sketchfab.com/mustafaozgen",
-                        "icon": "fas fa-cube"
-                    },
-                    {
-                        "name": "ArtStation",
-                        "url": "https://mustafaozgen.artstation.com/",
-                        "icon": "fas fa-palette"
-                    },
-                    {
-                        "name": "YouTube",
-                        "url": "https://www.youtube.com/c/MustafaÖzgen",
-                        "icon": "fab fa-youtube"
-                    }
-                ]
-            }
+            "links": [
+                {
+                    "name": "LinkedIn",
+                    "url": "https://www.linkedin.com/in/mustafa-ozgen/",
+                    "icon": "fab fa-linkedin"
+                },
+                {
+                    "name": "Sketchfab",
+                    "url": "https://sketchfab.com/mustafaozgen",
+                    "icon": "fas fa-cube"
+                },
+                {
+                    "name": "ArtStation",
+                    "url": "https://mustafaozgen.artstation.com/",
+                    "icon": "fas fa-palette"
+                },
+                {
+                    "name": "YouTube",
+                    "url": "https://www.youtube.com/c/MustafaÖzgen",
+                    "icon": "fab fa-youtube"
+                }
+            ]
         }
     }
 } 
