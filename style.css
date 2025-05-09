@@ -32,25 +32,23 @@ body {
     background-color: var(--bg-color);
     color: var(--text-color);
     font-family: var(--font-primary);
-    padding: 20px;
-    height: 100vh;
+    min-height: 100vh;
     display: flex;
     justify-content: center;
-    align-items: flex-start;
+    align-items: center;
     background-image: 
         radial-gradient(circle at 0% 0%, var(--primary-color) 0%, transparent 50%),
         radial-gradient(circle at 100% 100%, var(--secondary-color) 0%, transparent 50%);
     background-size: 100% 100%;
     box-sizing: border-box;
-    overflow: hidden;
-    line-height: 1.6;
+    padding: 20px;
 }
 
 .terminal {
     width: 90%;
     max-width: 1200px;
     height: calc(100vh - 40px);
-    margin: 20px auto;
+    margin: 0 auto;
     padding: 30px;
     border: 1px solid var(--card-border);
     background-color: var(--terminal-bg);
@@ -61,6 +59,7 @@ body {
     flex-direction: column;
     box-sizing: border-box;
     backdrop-filter: blur(10px);
+    overflow: hidden;
 }
 
 /* Terminal başlığını kaldır */
@@ -91,40 +90,49 @@ body {
 }
 
 .language-selector {
-    position: absolute;
-    top: -25px;
-    right: 10px;
+    position: fixed;
+    top: 20px;
+    right: 20px;
     display: flex;
-    gap: 5px;
+    gap: 8px;
     z-index: 1000;
+    background: var(--terminal-bg);
+    padding: 8px;
+    border-radius: var(--border-radius);
+    box-shadow: 0 4px 12px var(--shadow-color);
+    backdrop-filter: blur(10px);
 }
 
 .lang-btn {
     background: var(--terminal-bg);
     border: 1px solid var(--primary-color);
     color: var(--primary-color);
-    padding: 2px 8px;
-    font-size: 12px;
+    padding: 6px 16px;
+    font-size: 14px;
+    font-weight: 500;
     cursor: pointer;
     transition: all 0.3s ease;
-    text-shadow: var(--text-shadow);
+    border-radius: 6px;
 }
 
 .lang-btn.active {
-    background-color: var(--terminal-bg);
-    box-shadow: 0 0 10px var(--glow-color);
+    background: var(--primary-color);
+    color: white;
+    box-shadow: 0 2px 8px var(--glow-color);
 }
 
 .lang-btn:hover {
-    background-color: var(--terminal-bg);
+    background: var(--primary-color);
+    color: white;
     transform: translateY(-2px);
+    box-shadow: 0 4px 12px var(--glow-color);
 }
 
 .menu {
-    margin-bottom: 20px;
+    margin-bottom: 30px;
     display: flex;
     flex-wrap: wrap;
-    gap: 10px;
+    gap: 15px;
 }
 
 button {
@@ -386,66 +394,73 @@ h1 {
 /* Consolidated Media Queries */
 @media (max-width: 1024px) {
     body {
-        padding: var(--spacing-md);
+        padding: 15px;
     }
 
     .terminal {
         width: 95%;
-        padding: var(--spacing-md);
+        padding: 25px;
         height: calc(100vh - 30px);
-        margin: var(--spacing-md) auto;
-    }
-    
-    .project-content {
-        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
     }
 
     .language-selector {
-        position: absolute;
-        top: var(--spacing-sm);
-        right: var(--spacing-sm);
-        background: var(--terminal-bg);
-        padding: var(--spacing-xs);
-        border-radius: var(--border-radius);
-        box-shadow: 0 0 10px var(--glow-color);
+        top: 15px;
+        right: 15px;
+        padding: 6px;
     }
 
     .lang-btn {
-        padding: var(--spacing-xs) var(--spacing-sm);
-        font-size: 14px;
+        padding: 5px 14px;
+        font-size: 13px;
     }
 
-    .toggle-description {
-        padding: var(--spacing-xs) var(--spacing-sm);
+    .menu {
+        gap: 12px;
     }
-    
-    .toggle-text {
-        font-size: 0.65em;
+
+    button {
+        padding: 10px 20px;
+        font-size: 0.95rem;
+    }
+
+    .project-content {
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
     }
 }
 
 @media (max-width: 768px) {
     body {
-        padding: var(--spacing-sm);
+        padding: 10px;
     }
     
     .terminal {
         width: 100%;
-        padding: var(--spacing-sm);
+        padding: 20px;
         height: calc(100vh - 20px);
-        margin: var(--spacing-sm) auto;
+    }
+    
+    .language-selector {
+        top: 10px;
+        right: 10px;
+        padding: 5px;
+    }
+
+    .lang-btn {
+        padding: 4px 12px;
+        font-size: 12px;
     }
     
     .menu {
         flex-direction: column;
-        margin-top: var(--spacing-sm);
+        margin-top: 15px;
+        gap: 10px;
     }
     
     button {
         width: 100%;
-        margin: var(--spacing-xs) 0;
-        padding: var(--spacing-sm);
-        font-size: 14px;
+        margin: 0;
+        padding: 12px;
+        font-size: 0.9rem;
     }
     
     .project-content {
@@ -453,30 +468,19 @@ h1 {
     }
     
     .project {
-        padding: var(--spacing-md);
+        padding: 15px;
     }
     
     .project-media {
         aspect-ratio: 16/9;
     }
 
-    .language-selector {
-        position: absolute;
-        top: -20px;
-        right: var(--spacing-sm);
-        background: transparent;
-    }
-
-    .lang-btn {
-        background: var(--terminal-bg);
-    }
-
     .toggle-description {
-        padding: var(--spacing-xs) var(--spacing-sm);
+        padding: 6px 12px;
         min-width: auto;
         width: auto;
         justify-content: flex-start;
-        margin-left: var(--spacing-sm);
+        margin-left: 10px;
         display: inline-flex;
     }
     
@@ -493,39 +497,36 @@ h1 {
 
 @media (max-width: 480px) {
     body {
-        padding: var(--spacing-xs);
+        padding: 8px;
     }
 
     .terminal {
-        padding: 8px;
-        height: calc(100vh - 10px);
-        margin: var(--spacing-xs) auto;
+        padding: 15px;
+        height: calc(100vh - 16px);
+    }
+    
+    .language-selector {
+        top: 8px;
+        right: 8px;
+        padding: 4px;
+    }
+
+    .lang-btn {
+        padding: 3px 10px;
+        font-size: 11px;
     }
     
     .project {
-        padding: var(--spacing-sm);
+        padding: 12px;
     }
     
     h1 {
         font-size: 20px;
-        margin-top: var(--spacing-xs);
+        margin-top: 8px;
     }
     
     .project h2 {
         font-size: 18px;
-    }
-
-    .language-selector {
-        position: absolute;
-        top: -18px;
-        right: 8px;
-        background: transparent;
-    }
-
-    .lang-btn {
-        padding: 4px var(--spacing-sm);
-        font-size: 12px;
-        background: var(--terminal-bg);
     }
 
     .toggle-description {
