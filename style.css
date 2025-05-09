@@ -238,36 +238,18 @@ h1 {
     border-radius: var(--border-radius);
     background: var(--card-bg);
     box-shadow: 0 10px 30px var(--shadow-color);
-    transition: all 0.3s ease;
     position: relative;
     overflow: hidden;
 }
 
+/* Arkaplan animasyonunu kaldır */
 .project::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: linear-gradient(
-        135deg,
-        var(--primary-color) 0%,
-        var(--secondary-color) 50%,
-        var(--accent-color) 100%
-    );
-    opacity: 0;
-    transition: opacity 0.3s ease;
-    z-index: 0;
-}
-
-.project:hover::before {
-    opacity: 0.03;
+    display: none;
 }
 
 .project:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 15px 35px var(--shadow-color);
+    transform: none;
+    box-shadow: 0 10px 30px var(--shadow-color);
 }
 
 .project h2 {
@@ -376,34 +358,17 @@ h1 {
     overflow: hidden;
     aspect-ratio: 16/9;
     box-shadow: 0 10px 25px var(--shadow-color);
-    transition: all 0.3s ease;
     position: relative;
 }
 
+/* Medya hover efektlerini kaldır */
 .project-media::after {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: linear-gradient(
-        135deg,
-        var(--primary-color) 0%,
-        var(--secondary-color) 50%,
-        var(--accent-color) 100%
-    );
-    opacity: 0;
-    transition: opacity 0.3s ease;
-}
-
-.project-media:hover::after {
-    opacity: 0.05;
+    display: none;
 }
 
 .project-media:hover {
-    transform: scale(1.02);
-    box-shadow: 0 15px 30px var(--shadow-color);
+    transform: none;
+    box-shadow: 0 10px 25px var(--shadow-color);
 }
 
 .project-media img {
