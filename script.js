@@ -165,85 +165,76 @@ async function loadProjects() {
             // Medya dosyalarını toplamak için dizi
             const mediaPromises = [];
             
-            // Her uzantı için 1'den 10'a kadar dosya kontrolü yap
-            for (let i = 1; i <= 10; i++) {
-                for (const ext of supportedExtensions) {
-                    const mediaPath = `projects/${project.folder}/${i}${ext}`;
-                    
-                    // Dosyanın varlığını kontrol et ve promise olarak ekle
-                    const mediaPromise = fetch(mediaPath)
-                        .then(response => {
-                            if (response.ok) {
-                                console.log('Media file found:', mediaPath);
-                                const isVideo = ext === '.mp4';
-                                const mediaElement = document.createElement('div');
-                                mediaElement.className = 'project-media';
+            // Sadece projects.json'da belirtilen medya dosyalarını yükle
+            if (project.media && Array.isArray(project.media)) {
+                for (const mediaFile of project.media) {
+                    const mediaPath = `projects/${project.folder}/${mediaFile}`;
+                    try {
+                        const response = await fetch(mediaPath);
+                        if (response.ok) {
+                            console.log('Media file found:', mediaPath);
+                            const mediaElement = document.createElement('div');
+                            mediaElement.className = 'project-media';
+                            
+                            // Dosya uzantısına göre işlem yap
+                            const ext = mediaFile.split('.').pop().toLowerCase();
+                            if (ext === 'mp4') {
+                                // Video için thumbnail oluştur
+                                const thumbnailTime = project.videoThumbnailTime || 0;
                                 
-                                if (isVideo) {
-                                    // Video için thumbnail oluştur
-                                    const thumbnailTime = project.videoThumbnailTime || 0;
-                                    
-                                    mediaElement.innerHTML = `
-                                        <div class="video-container">
-                                            <video muted playsinline preload="metadata">
-                                                <source src="${mediaPath}" type="video/mp4">
-                                            </video>
-                                            <button class="play-button">
-                                                <i class="fas fa-play"></i>
-                                            </button>
-                                        </div>
-                                    `;
-                                    
-                                    const video = mediaElement.querySelector('video');
-                                    const playButton = mediaElement.querySelector('.play-button');
-                                    const videoContainer = mediaElement.querySelector('.video-container');
-                                    
-                                    video.dataset.thumbnailTime = thumbnailTime;
-                                    
-                                    // Video yüklendiğinde thumbnail'i ayarla
-                                    video.addEventListener('loadedmetadata', () => {
-                                        video.currentTime = thumbnailTime;
-                                        // Mobil için poster oluştur
-                                        const canvas = document.createElement('canvas');
-                                        canvas.width = video.videoWidth;
-                                        canvas.height = video.videoHeight;
-                                        const ctx = canvas.getContext('2d');
-                                        ctx.drawImage(video, 0, 0, canvas.width, canvas.height);
-                                        video.poster = canvas.toDataURL();
-                                    });
-                                    
-                                    new VideoHandler(video, playButton, videoContainer);
-                                } else {
-                                    mediaElement.innerHTML = `
-                                        <img src="${mediaPath}" alt="${project.title[currentLanguage]}" loading="lazy" />
-                                    `;
-                                }
+                                mediaElement.innerHTML = `
+                                    <div class="video-container">
+                                        <video muted playsinline preload="metadata">
+                                            <source src="${mediaPath}" type="video/mp4">
+                                        </video>
+                                        <button class="play-button">
+                                            <i class="fas fa-play"></i>
+                                        </button>
+                                    </div>
+                                `;
                                 
-                                return { index: i, element: mediaElement };
+                                const video = mediaElement.querySelector('video');
+                                const playButton = mediaElement.querySelector('.play-button');
+                                const videoContainer = mediaElement.querySelector('.video-container');
+                                
+                                video.dataset.thumbnailTime = thumbnailTime;
+                                
+                                // Video yüklendiğinde thumbnail'i ayarla
+                                video.addEventListener('loadedmetadata', () => {
+                                    video.currentTime = thumbnailTime;
+                                    // Mobil için poster oluştur
+                                    const canvas = document.createElement('canvas');
+                                    canvas.width = video.videoWidth;
+                                    canvas.height = video.videoHeight;
+                                    const ctx = canvas.getContext('2d');
+                                    ctx.drawImage(video, 0, 0, canvas.width, canvas.height);
+                                    video.poster = canvas.toDataURL();
+                                });
+                                
+                                new VideoHandler(video, playButton, videoContainer);
+                            } else {
+                                // Resim dosyaları için
+                                mediaElement.innerHTML = `
+                                    <img src="${mediaPath}" alt="${project.title[currentLanguage]}" loading="lazy" />
+                                `;
                             }
-                            return null;
-                        })
-                        .catch(error => {
-                            console.log(`Media file not found: ${mediaPath}`, error);
-                            return null;
-                        });
-                    
-                    mediaPromises.push(mediaPromise);
+                            
+                            // Dosya numarasını al (1.gif -> 1)
+                            const index = parseInt(mediaFile.split('.')[0]);
+                            mediaPromises.push({ index, element: mediaElement });
+                        }
+                    } catch (error) {
+                        console.log(`Error loading media file: ${mediaPath}`);
+                    }
                 }
             }
             
-            // Tüm medya dosyalarının yüklenmesini bekle
-            const mediaResults = await Promise.all(mediaPromises);
-            
-            // Sadece başarılı yüklenen ve null olmayan sonuçları filtrele ve sırala
-            const sortedMedia = mediaResults
-                .filter(result => result !== null)
-                .sort((a, b) => a.index - b.index);
-            
             // Sıralı medya öğelerini DOM'a ekle
-            sortedMedia.forEach(result => {
-                projectContent.appendChild(result.element);
-            });
+            mediaPromises
+                .sort((a, b) => a.index - b.index)
+                .forEach(result => {
+                    projectContent.appendChild(result.element);
+                });
             
             return projectElement;
         });
