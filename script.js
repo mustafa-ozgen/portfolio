@@ -98,7 +98,7 @@ async function loadProjects() {
     try {
         isLoadingProjects = true;
         console.log('Loading projects...');
-        const response = await fetch('projects.json');
+        const response = await fetch('resources/projects.json');
         if (!response.ok) {
             throw new Error(`HTTP error! status: ${response.status}`);
         }
@@ -336,7 +336,7 @@ function typeWriter(element, text, speed = 50) {
 // About me ve deneyimler bilgilerini yükle
 async function loadAboutInfo() {
     try {
-        const response = await fetch('info.json');
+        const response = await fetch('resources/info.json');
         if (!response.ok) {
             throw new Error(`HTTP error! status: ${response.status}`);
         }
