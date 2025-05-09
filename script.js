@@ -159,6 +159,13 @@ function showPage(pageId) {
     if (activePage) {
         activePage.classList.remove('hidden');
         activePage.classList.add('visible');
+        
+        // Başlıkları güncelle
+        const title = activePage.querySelector('h1');
+        if (title) {
+            const newText = title.dataset[currentLanguage];
+            title.textContent = newText;
+        }
     }
 }
 
@@ -197,8 +204,7 @@ function changeLanguage(lang) {
         } else {
             const newText = element.dataset[lang];
             if (element.tagName === 'H1') {
-                // Başlık için typeWriter efektini kullan
-                typeWriter(element, newText);
+                element.textContent = newText;
             } else {
                 element.innerHTML = newText;
             }
