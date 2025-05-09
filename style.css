@@ -253,6 +253,7 @@ h1 {
     border-radius: 5px;
     min-width: auto;
     width: auto;
+    text-shadow: none;
 }
 
 .toggle-description:hover {
