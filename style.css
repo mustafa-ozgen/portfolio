@@ -79,7 +79,7 @@ body {
 }
 
 .lang-btn {
-    background: transparent;
+    background: var(--terminal-bg);
     border: 1px solid var(--primary-color);
     color: var(--primary-color);
     padding: 2px 8px;
@@ -90,12 +90,12 @@ body {
 }
 
 .lang-btn.active {
-    background-color: rgba(0, 255, 157, 0.2);
+    background-color: var(--terminal-bg);
     box-shadow: 0 0 10px var(--glow-color);
 }
 
 .lang-btn:hover {
-    background-color: rgba(0, 255, 157, 0.1);
+    background-color: var(--terminal-bg);
     transform: translateY(-2px);
 }
 
@@ -199,13 +199,13 @@ h1 {
     border-radius: 5px;
     background: rgba(0, 255, 157, 0.05);
     box-shadow: 0 0 15px var(--glow-color);
-    transition: transform 0.3s ease;
 }
 
-.project:hover {
+/* Hover efektini kaldır */
+/* .project:hover {
     transform: translateY(-5px);
     box-shadow: 0 0 20px var(--glow-color);
-}
+} */
 
 .project h2 {
     color: var(--primary-color);
@@ -313,8 +313,13 @@ h1 {
 
     .language-selector {
         position: absolute;
-        top: -25px;
+        top: -20px;
         right: 10px;
+        background: transparent;
+    }
+
+    .lang-btn {
+        background: var(--terminal-bg);
     }
 }
 
@@ -345,13 +350,15 @@ h1 {
 
     .language-selector {
         position: absolute;
-        top: -25px;
+        top: -18px;
         right: 8px;
+        background: transparent;
     }
 
     .lang-btn {
         padding: 4px 10px;
         font-size: 12px;
+        background: var(--terminal-bg);
     }
 }
 
