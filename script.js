@@ -189,7 +189,7 @@ async function loadProjects() {
                                                 <source src="${mediaPath}" type="video/mp4">
                                             </video>
                                             <button class="play-button">
-                                                <i class="fas fa-terminal"></i>
+                                                <i class="fas fa-play"></i>
                                             </button>
                                         </div>
                                     `;
