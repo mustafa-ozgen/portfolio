@@ -251,6 +251,7 @@ h1 {
     align-items: center;
     gap: 8px;
     border-radius: 5px;
+    min-width: auto;
 }
 
 .toggle-description:hover {
@@ -260,6 +261,11 @@ h1 {
 
 .toggle-icon {
     transition: transform 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 20px;
+    height: 20px;
 }
 
 .toggle-description.expanded .toggle-icon {
@@ -277,6 +283,7 @@ h1 {
     font-family: inherit;
     text-transform: uppercase;
     letter-spacing: 1px;
+    white-space: nowrap;
 }
 
 .toggle-description.expanded .toggle-text {
@@ -342,6 +349,14 @@ h1 {
         padding: 5px 12px;
         font-size: 14px;
     }
+
+    .toggle-description {
+        padding: 5px 8px;
+    }
+    
+    .toggle-text {
+        font-size: 0.65em;
+    }
 }
 
 @media (max-width: 768px) {
@@ -392,15 +407,22 @@ h1 {
     }
 
     .toggle-description {
-        padding: 5px;
+        padding: 5px 8px;
+        min-width: auto;
+        justify-content: flex-end;
+    }
+    
+    .toggle-icon {
+        width: 18px;
+        height: 18px;
     }
     
     .toggle-text {
-        display: none;
+        font-size: 0.6em;
+        letter-spacing: 0.5px;
     }
 }
 
-/* Küçük mobil cihazlar için */
 @media (max-width: 480px) {
     body {
         padding: 5px;
@@ -436,6 +458,25 @@ h1 {
         padding: 4px 10px;
         font-size: 12px;
         background: var(--terminal-bg);
+    }
+
+    .toggle-description {
+        padding: 4px 6px;
+        min-width: auto;
+    }
+    
+    .toggle-icon {
+        width: 16px;
+        height: 16px;
+    }
+    
+    .toggle-description i {
+        font-size: 0.7em;
+    }
+    
+    .toggle-text {
+        font-size: 0.55em;
+        letter-spacing: 0.3px;
     }
 }
 
