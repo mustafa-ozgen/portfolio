@@ -1,12 +1,20 @@
 // Dil ayarları
 let currentLanguage = 'en';
+let isLoadingProjects = false; // Yükleme durumunu takip etmek için
 
 // Desteklenen medya dosya uzantıları
 const supportedExtensions = ['.gif', '.webp', '.mp4', '.jpg', '.jpeg', '.png'];
 
 // Projeleri yükle
 async function loadProjects() {
+    // Eğer yükleme devam ediyorsa, yeni bir yükleme başlatma
+    if (isLoadingProjects) {
+        console.log('Projects are already loading...');
+        return;
+    }
+    
     try {
+        isLoadingProjects = true;
         console.log('Loading projects...');
         const response = await fetch('projects.json');
         if (!response.ok) {
@@ -21,24 +29,51 @@ async function loadProjects() {
             return;
         }
         
-        container.innerHTML = ''; // Mevcut projeleri temizle
+        // Mevcut projeleri temizle
+        container.innerHTML = '';
         
-        for (const project of data.projects) {
+        // Her proje için bir Promise oluştur
+        const projectPromises = data.projects.map(async (project) => {
             console.log('Processing project:', project.folder);
             const projectElement = document.createElement('div');
             projectElement.className = 'project';
             
-            // Önce başlık ve açıklamayı ekle
-            projectElement.innerHTML = `
-                <h2>${project.title[currentLanguage]}</h2>
-                <p>${project.description[currentLanguage]}</p>
-                <div class="project-content"></div>
-            `;
+            // Başlık ve açıklama için container oluştur
+            const titleContainer = document.createElement('div');
+            titleContainer.className = 'title-container';
             
-            container.appendChild(projectElement);
+            // Başlık
+            const title = document.createElement('h2');
+            title.textContent = project.title[currentLanguage];
             
-            // Proje klasöründeki medya dosyalarını kontrol et
-            const projectContent = projectElement.querySelector('.project-content');
+            // Açıklama toggle butonu
+            const toggleButton = document.createElement('button');
+            toggleButton.className = 'toggle-description';
+            toggleButton.innerHTML = '<i class="fas fa-chevron-down"></i>';
+            
+            // Açıklama
+            const description = document.createElement('p');
+            description.className = 'project-description';
+            description.textContent = project.description[currentLanguage];
+            
+            // Başlık container'ına başlık ve toggle butonunu ekle
+            titleContainer.appendChild(title);
+            titleContainer.appendChild(toggleButton);
+            
+            // Proje içeriği için container
+            const projectContent = document.createElement('div');
+            projectContent.className = 'project-content';
+            
+            // Tüm elementleri proje container'ına ekle
+            projectElement.appendChild(titleContainer);
+            projectElement.appendChild(description);
+            projectElement.appendChild(projectContent);
+            
+            // Toggle butonu için event listener
+            toggleButton.addEventListener('click', () => {
+                description.classList.toggle('expanded');
+                toggleButton.classList.toggle('expanded');
+            });
             
             // Medya dosyalarını toplamak için dizi
             const mediaPromises = [];
@@ -167,9 +202,20 @@ async function loadProjects() {
             sortedMedia.forEach(result => {
                 projectContent.appendChild(result.element);
             });
-        }
+            
+            return projectElement;
+        });
+        
+        // Tüm projelerin yüklenmesini bekle ve container'a ekle
+        const projectElements = await Promise.all(projectPromises);
+        projectElements.forEach(element => {
+            container.appendChild(element);
+        });
+        
     } catch (error) {
         console.error('Projeler yüklenirken hata oluştu:', error);
+    } finally {
+        isLoadingProjects = false;
     }
 }
 
