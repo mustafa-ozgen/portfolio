@@ -2,7 +2,7 @@
 let currentLanguage = 'en';
 
 // Desteklenen medya dosya uzantıları
-const supportedExtensions = ['.jpg', '.jpeg', '.png', '.gif', '.mp4', '.webp'];
+const supportedExtensions = ['.gif', '.webp', '.mp4', '.jpg', '.jpeg', '.png'];
 
 // Projeleri yükle
 async function loadProjects() {
@@ -63,7 +63,7 @@ async function loadProjects() {
                                     
                                     mediaElement.innerHTML = `
                                         <div class="video-container">
-                                            <video muted>
+                                            <video muted playsinline preload="metadata">
                                                 <source src="${mediaPath}" type="video/mp4">
                                             </video>
                                             <button class="play-button">
@@ -79,6 +79,13 @@ async function loadProjects() {
                                     // Video yüklendiğinde thumbnail'i ayarla
                                     video.addEventListener('loadedmetadata', () => {
                                         video.currentTime = thumbnailTime;
+                                        // Mobil için poster oluştur
+                                        const canvas = document.createElement('canvas');
+                                        canvas.width = video.videoWidth;
+                                        canvas.height = video.videoHeight;
+                                        const ctx = canvas.getContext('2d');
+                                        ctx.drawImage(video, 0, 0, canvas.width, canvas.height);
+                                        video.poster = canvas.toDataURL();
                                     });
                                     
                                     playButton.addEventListener('click', () => {
@@ -261,7 +268,31 @@ window.onload = () => {
     changeLanguage('en');
     // Sonra sayfayı göster
     showPage('about');
-    loadProjects();
+    
+    // Arka planda projeleri yüklemeye başla
+    const loadProjectsPromise = loadProjects();
+    
+    // Profil fotoğrafını yükle
     loadProfileImage();
+    
+    // Intersection Observer ile sayfa görünürlüğünü kontrol et
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                const pageId = entry.target.id;
+                if (pageId === 'projects') {
+                    // Projects sayfası görünür olduğunda, yükleme tamamlanmamışsa bekle
+                    loadProjectsPromise.then(() => {
+                        console.log('Projects page fully loaded');
+                    });
+                }
+            }
+        });
+    }, { threshold: 0.1 });
+    
+    // Tüm sayfaları gözlemle
+    document.querySelectorAll('.page').forEach(page => {
+        observer.observe(page);
+    });
 };
   
