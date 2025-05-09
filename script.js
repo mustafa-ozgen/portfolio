@@ -401,6 +401,55 @@ function calculateExperienceDuration(startDate) {
     }
 }
 
+// İletişim bilgilerini yükle
+async function loadContactInfo() {
+    try {
+        const response = await fetch('resources/info.json');
+        if (!response.ok) {
+            throw new Error(`HTTP error! status: ${response.status}`);
+        }
+        const data = await response.json();
+        
+        const contactContainer = document.querySelector('#contact .contact-container');
+        if (contactContainer) {
+            const contactData = data.contact[currentLanguage];
+            
+            // İş teklifleri bölümü
+            const businessSection = document.createElement('div');
+            businessSection.className = 'contact-section';
+            businessSection.innerHTML = `
+                <h2>${contactData.business.title}</h2>
+                <div class="contact-item">
+                    <i class="fas fa-envelope"></i>
+                    <a href="mailto:${contactData.business.email}" class="terminal-link">${contactData.business.email}</a>
+                </div>
+            `;
+            
+            // Sosyal medya bölümü
+            const socialSection = document.createElement('div');
+            socialSection.className = 'contact-section';
+            socialSection.innerHTML = `
+                <h2>${contactData.social.title}</h2>
+                <div class="social-links">
+                    ${contactData.social.links.map(link => `
+                        <a href="${link.url}" target="_blank" class="terminal-link">
+                            <i class="${link.icon}"></i>
+                            <span>${link.name}</span>
+                        </a>
+                    `).join('')}
+                </div>
+            `;
+            
+            // Mevcut içeriği temizle ve yeni içeriği ekle
+            contactContainer.innerHTML = '';
+            contactContainer.appendChild(businessSection);
+            contactContainer.appendChild(socialSection);
+        }
+    } catch (error) {
+        console.error('Contact info yüklenirken hata oluştu:', error);
+    }
+}
+
 // Dil değiştirme fonksiyonu
 function changeLanguage(lang) {
     currentLanguage = lang;
@@ -430,6 +479,9 @@ function changeLanguage(lang) {
     // About me ve deneyimleri güncelle
     loadAboutInfo();
     
+    // İletişim bilgilerini güncelle
+    loadContactInfo();
+    
     // Projeleri yeniden yükle
     loadProjects();
 }
@@ -443,6 +495,9 @@ window.onload = () => {
     
     // About me ve deneyimleri yükle
     loadAboutInfo();
+    
+    // İletişim bilgilerini yükle
+    loadContactInfo();
     
     // Arka planda projeleri yüklemeye başla
     const loadProjectsPromise = loadProjects();
