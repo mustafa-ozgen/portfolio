@@ -262,13 +262,22 @@ h1 {
 
 .project h2 {
     color: var(--text-color);
-    margin-bottom: 20px;
+    margin-bottom: 10px;
     font-size: clamp(24px, 4vw, 32px);
     display: flex;
     align-items: center;
     justify-content: space-between;
     position: relative;
     z-index: 1;
+}
+
+.project-subtitle {
+    color: var(--text-light);
+    font-size: 0.9em;
+    margin-top: -5px;
+    margin-bottom: 15px;
+    font-family: var(--font-secondary);
+    opacity: 0.8;
 }
 
 .project-description {

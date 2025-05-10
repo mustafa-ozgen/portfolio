@@ -128,6 +128,11 @@ async function loadProjects() {
             const title = document.createElement('h2');
             title.textContent = project.title[currentLanguage];
             
+            // Alt başlık
+            const subtitle = document.createElement('div');
+            subtitle.className = 'project-subtitle';
+            subtitle.textContent = project.subtitle[currentLanguage];
+            
             // Açıklama toggle butonu
             const toggleButton = document.createElement('button');
             toggleButton.className = 'toggle-description';
@@ -145,6 +150,7 @@ async function loadProjects() {
             
             // Başlık container'ına başlık ve toggle butonunu ekle
             titleContainer.appendChild(title);
+            titleContainer.appendChild(subtitle);
             titleContainer.appendChild(toggleButton);
             
             // Proje içeriği için container
