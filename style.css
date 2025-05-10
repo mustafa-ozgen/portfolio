@@ -628,10 +628,9 @@ h1 {
 }
 
 .profile-image {
-    width: 200px;
-    height: 200px;
+    width: 256px;
+    height: 512px;
     margin-top: 1rem;
-    border: 1px solid var(--primary-color);
     border-radius: 5px;
     overflow: hidden;
     box-shadow: 0 0 10px var(--glow-color);
@@ -831,9 +830,8 @@ h1 {
 }
 
 .profile-image {
-    width: 200px;
-    height: 200px;
-    border: 1px solid var(--primary-color);
+    width: 256px;
+    height: 512px;
     border-radius: 5px;
     overflow: hidden;
     box-shadow: 0 0 10px var(--glow-color);
@@ -889,9 +887,8 @@ h1 {
 }
 
 .profile-image {
-    width: 200px;
-    height: 200px;
-    border: 1px solid var(--primary-color);
+    width: 256px;
+    height: 512px;
     border-radius: 5px;
     overflow: hidden;
     box-shadow: 0 0 10px var(--glow-color);
