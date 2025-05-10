@@ -261,7 +261,7 @@ async function loadProjects() {
 // Profil fotoğrafını yükle
 async function loadProfileImage() {
     const profileImage = document.getElementById('profileImage');
-    const imageExtensions = ['.jpg', '.jpeg', '.png', '.webp'];
+    const imageExtensions = ['.webp', '.jpeg', '.jpg', '.png'];
     
     for (const ext of imageExtensions) {
         try {
