@@ -73,22 +73,6 @@ body {
     text-shadow: var(--text-shadow);
 } */
 
-.terminal::after {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background: 
-        linear-gradient(45deg, transparent 48%, var(--primary-color) 49%, var(--primary-color) 51%, transparent 52%),
-        linear-gradient(-45deg, transparent 48%, var(--primary-color) 49%, var(--primary-color) 51%, transparent 52%);
-    background-size: 30px 30px;
-    opacity: 0.03;
-    pointer-events: none;
-    border-radius: var(--border-radius);
-}
-
 .language-selector {
     position: fixed;
     top: 20px;
