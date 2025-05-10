@@ -7,8 +7,8 @@
                 "tr": "Göbeklitepe - Toplanış"
             },
             "subtitle": {
-                "en": "Interactive Installation",
-                "tr": "İnteraktif Kurulum"
+                "en": "Cer Modern",
+                "tr": "Cer Modern"
             },
             "description": {
                 "tr": "Bu interaktif kurulum, Göbeklitepe'nin dairesel alanlarındaki 12 taştan esinlenerek tasarlanmış platformları içeriyor. Her platformda, ziyaretçilerin ellerini yerleştirebileceği özel oyuklar bulunuyor. Ziyaretçiler ellerini bu oyuklara yerleştirdiğinde, sensörler aracılığıyla algılanan hareketler, mikrodenetleyici üzerinden sisteme aktarılarak 360 derece projeksiyon alanında görsel bir deneyime dönüşüyor. Bu sistem, günümüz insanı ile Göbeklitepe insanları arasında interaktif bir köprü kuruyor.\n\nTeknolojiler:\n• Arduino ve LDR sensör ağı\n• Serial port üzerinden gerçek zamanlı veri iletişimi",
@@ -58,8 +58,8 @@
                 "tr": "Karanlığı Aydınlat"
             },
             "subtitle": {
-                "en": "Interactive Installation",
-                "tr": "İnteraktif Kurulum"
+                "en": "UN Women",
+                "tr": "UN Women"
             },
             "description": {
                 "tr": "Bu yerleştirme, toplumsal şiddet olaylarını ve etkilerini ele alan interaktif bir deneyim sunuyor. Ziyaretçiler, masumiyeti temsil eden ışık halkalarının altından geçerken, şiddet mağdurlarının anılarına tanıklık ediyor. Arkadan gelen ziyaretçilerin gölgeleri, masumiyet kavramını sorgulatan bir boyut katıyor.\n\nTeknolojiler:\n• Mikrodenetleyici ve C++ yazılımı\n• PCB üzerinde güç yönetimi\n• Sensör ve LED kontrol sistemleri",
