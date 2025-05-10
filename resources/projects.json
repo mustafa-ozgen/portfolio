@@ -67,6 +67,23 @@
             },
             "videoThumbnailTime": 2,
             "media": ["1.gif", "2.webp", "3.mp4"]
+        },
+        {
+            "folder": "artvision-vr",
+            "title": {
+                "en": "Artvision VR",
+                "tr": "Artvision VR"
+            },
+            "subtitle": {
+                "en": "Virtual Reality Experience",
+                "tr": "Sanal Gerçeklik Deneyimi"
+            },
+            "description": {
+                "tr": "İstanbul Sinema Müzesi'nde sergilenen bu interaktif kurulum, sinema tarihine yön veren dört ikonik kamerayı keşfediyor. Bell & Howell, Pathe, Super 8 ve Arriflex kameralarının teknik özellikleri, kamera arkası görüntüler ve dönem bilgileri, dokunmatik ekranlarda sunuluyor. Holosonics teknolojisi ile çalışan noktasal hoparlörler, sesli anlatımı sadece ünitenin önünde duyulabilir kılıyor.\n\nTeknolojiler:\n• JavaScript tabanlı interaktif frameworkler\n• Dokunmatik ekran sistemleri\n• Holosonics Audio Spotlight\n• Medya senkronizasyon yazılımları",
+                "en": "This interactive installation at the Istanbul Cinema Museum explores four iconic cameras that shaped cinema history. Technical specifications, behind-the-scenes footage, and historical context of Bell & Howell, Pathe, Super 8, and Arriflex cameras are presented on touchscreens. Using Holosonics directional speakers, audio narration is only audible directly in front of each unit.\n\nTechnologies:\n• JavaScript-based interactive frameworks\n• Touchscreen systems\n• Holosonics Audio Spotlight\n• Media synchronization software"
+            },
+            "videoThumbnailTime": 13,
+            "media": ["1.gif", "2.webp", "3.mp4"]
         }
     ]
 }
