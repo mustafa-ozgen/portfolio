@@ -258,7 +258,7 @@ h1 {
 .project-subtitle {
     color: var(--text-light);
     font-size: 0.9em;
-    margin-top: -5px;
+    margin-top: -2.5px;
     margin-bottom: 15px;
     font-family: var(--font-secondary);
     opacity: 0.8;
