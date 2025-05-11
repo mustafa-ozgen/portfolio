@@ -205,12 +205,12 @@ async function loadProjects() {
                                 mediaElement.className = 'project-media';
                                 
                                 const ext = mediaFile.split('.').pop().toLowerCase();
-                                if (ext === 'mp4') {
-                                    const thumbnailTime = project.videoThumbnailTime || 0;
+                                if (ext === 'mp4') {                                    // Her proje için özel thumbnail kullan
+                                    const thumbnailPath = `projects/${project.folder}/thumbnail.webp`;
                                     
                                     mediaElement.innerHTML = `
                                         <div class="video-container">
-                                            <video muted playsinline preload="metadata">
+                                            <video muted playsinline preload="none" poster="${thumbnailPath}">
                                                 <source src="${mediaPath}" type="video/mp4">
                                             </video>
                                             <button class="play-button">
@@ -222,18 +222,6 @@ async function loadProjects() {
                                     const video = mediaElement.querySelector('video');
                                     const playButton = mediaElement.querySelector('.play-button');
                                     const videoContainer = mediaElement.querySelector('.video-container');
-                                    
-                                    video.dataset.thumbnailTime = thumbnailTime;
-                                    
-                                    video.addEventListener('loadedmetadata', () => {
-                                        video.currentTime = thumbnailTime;
-                                        const canvas = document.createElement('canvas');
-                                        canvas.width = video.videoWidth;
-                                        canvas.height = video.videoHeight;
-                                        const ctx = canvas.getContext('2d');
-                                        ctx.drawImage(video, 0, 0, canvas.width, canvas.height);
-                                        video.poster = canvas.toDataURL();
-                                    });
                                     
                                     new VideoHandler(video, playButton, videoContainer);
                                 } else {
