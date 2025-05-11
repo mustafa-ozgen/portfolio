@@ -89,7 +89,6 @@ const supportedExtensions = ['.gif', '.webp', '.mp4', '.jpg', '.jpeg', '.png'];
 
 // Projeleri yükle
 async function loadProjects() {
-    // Eğer yükleme devam ediyorsa, yeni bir yükleme başlatma
     if (isLoadingProjects) {
         console.log('Projects are already loading...');
         return;
@@ -114,143 +113,163 @@ async function loadProjects() {
         // Mevcut projeleri temizle
         container.innerHTML = '';
         
-        // Her proje için bir Promise oluştur
-        const projectPromises = data.projects.map(async (project) => {
-            console.log('Processing project:', project.folder);
-            const projectElement = document.createElement('div');
-            projectElement.className = 'project';
+        // Projeleri kategorilere göre grupla
+        const categorizedProjects = {};
+        data.projects.forEach(project => {
+            if (!categorizedProjects[project.category]) {
+                categorizedProjects[project.category] = [];
+            }
+            categorizedProjects[project.category].push(project);
+        });
+        
+        // Her kategori için bir bölüm oluştur
+        for (const categoryKey in data.categories) {
+            const categoryProjects = categorizedProjects[categoryKey];
+            if (!categoryProjects || categoryProjects.length === 0) continue;
             
-            // Başlık ve açıklama için container oluştur
-            const titleContainer = document.createElement('div');
-            titleContainer.className = 'title-container';
+            // Kategori başlığı oluştur
+            const categorySection = document.createElement('div');
+            categorySection.className = 'category-section';
             
-            // Başlık
-            const title = document.createElement('h2');
-            title.textContent = project.title[currentLanguage];
+            const categoryHeader = document.createElement('h2');
+            categoryHeader.className = 'category-header';
+            categoryHeader.textContent = data.categories[categoryKey][currentLanguage];
+            categorySection.appendChild(categoryHeader);
             
-            // Alt başlık
-            const subtitle = document.createElement('div');
-            subtitle.className = 'project-subtitle';
-            subtitle.textContent = project.subtitle[currentLanguage];
+            const projectsWrapper = document.createElement('div');
+            projectsWrapper.className = 'category-projects';
             
-            // Açıklama toggle butonu
-            const toggleButton = document.createElement('button');
-            toggleButton.className = 'toggle-description';
-            toggleButton.innerHTML = `
-                <div class="toggle-icon">
-                    <i class="fas fa-chevron-down"></i>
-                </div>
-                <span class="toggle-text">${currentLanguage === 'en' ? 'Info' : 'Detay'}</span>
-            `;
-            
-            // Açıklama
-            const description = document.createElement('p');
-            description.className = 'project-description';
-            description.textContent = project.description[currentLanguage];
-            
-            // Başlık container'ına başlık ve toggle butonunu ekle
-            titleContainer.appendChild(title);
-            titleContainer.appendChild(subtitle);
-            titleContainer.appendChild(toggleButton);
-            
-            // Proje içeriği için container
-            const projectContent = document.createElement('div');
-            projectContent.className = 'project-content';
-            
-            // Tüm elementleri proje container'ına ekle
-            projectElement.appendChild(titleContainer);
-            projectElement.appendChild(description);
-            projectElement.appendChild(projectContent);
-            
-            // Toggle butonu için event listener
-            toggleButton.addEventListener('click', () => {
-                description.classList.toggle('expanded');
-                toggleButton.classList.toggle('expanded');
-            });
-            
-            // Medya dosyalarını toplamak için dizi
-            const mediaPromises = [];
-            
-            // Sadece projects.json'da belirtilen medya dosyalarını yükle
-            if (project.media && Array.isArray(project.media)) {
-                for (const mediaFile of project.media) {
-                    const mediaPath = `projects/${project.folder}/${mediaFile}`;
-                    try {
-                        const response = await fetch(mediaPath);
-                        if (response.ok) {
-                            console.log('Media file found:', mediaPath);
-                            const mediaElement = document.createElement('div');
-                            mediaElement.className = 'project-media';
-                            
-                            // Dosya uzantısına göre işlem yap
-                            const ext = mediaFile.split('.').pop().toLowerCase();
-                            if (ext === 'mp4') {
-                                // Video için thumbnail oluştur
-                                const thumbnailTime = project.videoThumbnailTime || 0;
+            // Her bir proje için Promise oluştur
+            const projectPromises = categoryProjects.map(async (project) => {
+                const projectElement = document.createElement('div');
+                projectElement.className = 'project';
+                
+                // Başlık ve açıklama için container oluştur
+                const titleContainer = document.createElement('div');
+                titleContainer.className = 'title-container';
+                
+                // Başlık
+                const title = document.createElement('h3');
+                title.textContent = project.title[currentLanguage];
+                
+                // Alt başlık
+                const subtitle = document.createElement('div');
+                subtitle.className = 'project-subtitle';
+                subtitle.textContent = project.subtitle[currentLanguage];
+                
+                // Açıklama toggle butonu
+                const toggleButton = document.createElement('button');
+                toggleButton.className = 'toggle-description';
+                toggleButton.innerHTML = `
+                    <div class="toggle-icon">
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <span class="toggle-text">${currentLanguage === 'en' ? 'Info' : 'Detay'}</span>
+                `;
+                
+                // Açıklama
+                const description = document.createElement('p');
+                description.className = 'project-description';
+                description.textContent = project.description[currentLanguage];
+                
+                // Başlık container'ına elementleri ekle
+                titleContainer.appendChild(title);
+                titleContainer.appendChild(subtitle);
+                titleContainer.appendChild(toggleButton);
+                
+                // Proje içeriği için container
+                const projectContent = document.createElement('div');
+                projectContent.className = 'project-content';
+                
+                projectElement.appendChild(titleContainer);
+                projectElement.appendChild(description);
+                projectElement.appendChild(projectContent);
+                
+                // Toggle butonu için event listener
+                toggleButton.addEventListener('click', () => {
+                    description.classList.toggle('expanded');
+                    toggleButton.classList.toggle('expanded');
+                });
+                
+                // Medya dosyalarını toplamak için dizi
+                const mediaPromises = [];
+                
+                // Sadece projects.json'da belirtilen medya dosyalarını yükle
+                if (project.media && Array.isArray(project.media)) {
+                    for (const mediaFile of project.media) {
+                        const mediaPath = `projects/${project.folder}/${mediaFile}`;
+                        try {
+                            const response = await fetch(mediaPath);
+                            if (response.ok) {
+                                const mediaElement = document.createElement('div');
+                                mediaElement.className = 'project-media';
                                 
-                                mediaElement.innerHTML = `
-                                    <div class="video-container">
-                                        <video muted playsinline preload="metadata">
-                                            <source src="${mediaPath}" type="video/mp4">
-                                        </video>
-                                        <button class="play-button">
-                                            <i class="fas fa-play"></i>
-                                        </button>
-                                    </div>
-                                `;
+                                const ext = mediaFile.split('.').pop().toLowerCase();
+                                if (ext === 'mp4') {
+                                    const thumbnailTime = project.videoThumbnailTime || 0;
+                                    
+                                    mediaElement.innerHTML = `
+                                        <div class="video-container">
+                                            <video muted playsinline preload="metadata">
+                                                <source src="${mediaPath}" type="video/mp4">
+                                            </video>
+                                            <button class="play-button">
+                                                <i class="fas fa-play"></i>
+                                            </button>
+                                        </div>
+                                    `;
+                                    
+                                    const video = mediaElement.querySelector('video');
+                                    const playButton = mediaElement.querySelector('.play-button');
+                                    const videoContainer = mediaElement.querySelector('.video-container');
+                                    
+                                    video.dataset.thumbnailTime = thumbnailTime;
+                                    
+                                    video.addEventListener('loadedmetadata', () => {
+                                        video.currentTime = thumbnailTime;
+                                        const canvas = document.createElement('canvas');
+                                        canvas.width = video.videoWidth;
+                                        canvas.height = video.videoHeight;
+                                        const ctx = canvas.getContext('2d');
+                                        ctx.drawImage(video, 0, 0, canvas.width, canvas.height);
+                                        video.poster = canvas.toDataURL();
+                                    });
+                                    
+                                    new VideoHandler(video, playButton, videoContainer);
+                                } else {
+                                    mediaElement.innerHTML = `
+                                        <img src="${mediaPath}" alt="${project.title[currentLanguage]}" loading="lazy" />
+                                    `;
+                                }
                                 
-                                const video = mediaElement.querySelector('video');
-                                const playButton = mediaElement.querySelector('.play-button');
-                                const videoContainer = mediaElement.querySelector('.video-container');
-                                
-                                video.dataset.thumbnailTime = thumbnailTime;
-                                
-                                // Video yüklendiğinde thumbnail'i ayarla
-                                video.addEventListener('loadedmetadata', () => {
-                                    video.currentTime = thumbnailTime;
-                                    // Mobil için poster oluştur
-                                    const canvas = document.createElement('canvas');
-                                    canvas.width = video.videoWidth;
-                                    canvas.height = video.videoHeight;
-                                    const ctx = canvas.getContext('2d');
-                                    ctx.drawImage(video, 0, 0, canvas.width, canvas.height);
-                                    video.poster = canvas.toDataURL();
-                                });
-                                
-                                new VideoHandler(video, playButton, videoContainer);
-                            } else {
-                                // Resim dosyaları için
-                                mediaElement.innerHTML = `
-                                    <img src="${mediaPath}" alt="${project.title[currentLanguage]}" loading="lazy" />
-                                `;
+                                const index = parseInt(mediaFile.split('.')[0]);
+                                mediaPromises.push({ index, element: mediaElement });
                             }
-                            
-                            // Dosya numarasını al (1.gif -> 1)
-                            const index = parseInt(mediaFile.split('.')[0]);
-                            mediaPromises.push({ index, element: mediaElement });
+                        } catch (error) {
+                            console.log(`Error loading media file: ${mediaPath}`);
                         }
-                    } catch (error) {
-                        console.log(`Error loading media file: ${mediaPath}`);
                     }
                 }
-            }
+                
+                // Sıralı medya öğelerini DOM'a ekle
+                mediaPromises
+                    .sort((a, b) => a.index - b.index)
+                    .forEach(result => {
+                        projectContent.appendChild(result.element);
+                    });
+                
+                return projectElement;
+            });
             
-            // Sıralı medya öğelerini DOM'a ekle
-            mediaPromises
-                .sort((a, b) => a.index - b.index)
-                .forEach(result => {
-                    projectContent.appendChild(result.element);
-                });
+            // Tüm projelerin yüklenmesini bekle ve category-projects'e ekle
+            const projectElements = await Promise.all(projectPromises);
+            projectElements.forEach(element => {
+                projectsWrapper.appendChild(element);
+            });
             
-            return projectElement;
-        });
-        
-        // Tüm projelerin yüklenmesini bekle ve container'a ekle
-        const projectElements = await Promise.all(projectPromises);
-        projectElements.forEach(element => {
-            container.appendChild(element);
-        });
-        
+            categorySection.appendChild(projectsWrapper);
+            container.appendChild(categorySection);
+        }
     } catch (error) {
         console.error('Projeler yüklenirken hata oluştu:', error);
     } finally {
@@ -531,4 +550,3 @@ window.onload = () => {
         observer.observe(page);
     });
 };
-  

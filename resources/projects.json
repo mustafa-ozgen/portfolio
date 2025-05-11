@@ -1,6 +1,21 @@
 {
+    "categories": {
+        "museum": {
+            "en": "Museum Installations",
+            "tr": "Müze Kurulumları"
+        },
+        "interactive": {
+            "en": "Interactive Experiences",
+            "tr": "Etkileşimli Deneyimler"
+        },
+        "digital": {
+            "en": "Digital Projects",
+            "tr": "Dijital Projeler"
+        }
+    },
     "projects": [
         {
+            "category": "interactive",
             "folder": "gobeklitepe-gathering",
             "title": {
                 "en": "Gobeklitepe - The Gathering",
@@ -16,8 +31,8 @@
             },
             "videoThumbnailTime": 7,
             "media": ["1.gif", "2.webp", "3.mp4"]
-        },
-        {
+        },        {
+            "category": "museum",
             "folder": "yesilcam-telefonda",
             "title": {
                 "en": "Yeşilçam on the Line",
@@ -33,8 +48,8 @@
             },
             "videoThumbnailTime": 2,
             "media": ["1.gif", "2.webp", "3.mp4"]
-        },
-        {
+        },        {
+            "category": "museum",
             "folder": "kameradan-hikayeye",
             "title": {
                 "en": "From Camera to Story",
@@ -50,8 +65,8 @@
             },
             "videoThumbnailTime": 11,
             "media": ["1.gif", "2.webp", "3.mp4"]
-        },
-        {
+        },        {
+            "category": "interactive",
             "folder": "karanligi-aydinlat",
             "title": {
                 "en": "Light the Dark",
@@ -67,8 +82,8 @@
             },
             "videoThumbnailTime": 2,
             "media": ["1.gif", "2.webp", "3.mp4"]
-        },
-        {
+        },        {
+            "category": "digital",
             "folder": "artvision-vr",
             "title": {
                 "en": "Artvision VR",

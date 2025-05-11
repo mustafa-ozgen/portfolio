@@ -903,3 +903,36 @@ h1 {
         gap: 15px;
     }
 }
+
+/* Kategori bölümleri için stiller */
+.category-section {
+    margin-bottom: 3rem;
+}
+
+.category-header {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 1.75rem;
+    font-weight: 600;
+    color: var(--text-color);
+    margin-bottom: 2rem;
+    position: relative;
+    display: inline-block;
+}
+
+.category-header::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -0.5rem;
+    width: 2rem;
+    height: 0.25rem;
+    background: linear-gradient(to right, var(--primary-color), var(--accent-color));
+    border-radius: 0.125rem;
+}
+
+.category-projects {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(min(100%, 400px), 1fr));
+    gap: 2rem;
+    margin: 0;
+}
