@@ -46,7 +46,7 @@ body {
 
 .terminal {
     width: 90%;
-    max-width: 1200px;
+    max-width: 1920px;
     height: calc(100vh - 40px);
     margin: 0 auto;
     padding: 30px;
@@ -61,17 +61,6 @@ body {
     backdrop-filter: blur(10px);
     overflow: hidden;
 }
-
-/* Terminal başlığını kaldır */
-/* .terminal::before {
-    content: "mustafa ozgen portfolio terminal";
-    position: absolute;
-    top: -25px;
-    left: 10px;
-    color: var(--primary-color);
-    font-size: 14px;
-    text-shadow: var(--text-shadow);
-} */
 
 .language-selector {
     position: fixed;
