@@ -11,9 +11,30 @@
         "digital": {
             "en": "Digital Projects",
             "tr": "Dijital Projeler"
+        },
+        "game": {
+            "en": "Game Development",
+            "tr": "Oyun Geliştirme"
         }
     },
     "projects": [
+        {
+            "category": "game",
+            "folder": "carboy-loop",
+            "title": {
+                "en": "Carboy Loop",
+                "tr": "Carboy Loop"
+            },
+            "subtitle": {
+                "en": "Hybrid-Casual Mobile Game",
+                "tr": "Hibrit-Kasual Mobil Oyun"
+            },
+            "description": {
+                "tr": "Carboy Loop, tamamen solo olarak geliştirilmiş özgün bir hibrit-kasual mobil oyun projesidir. Oyunun tüm yazılım, modelleme ve UI tasarımı tek kişi tarafından gerçekleştirilmiştir. Oyuncuları eğlenceli ve bağımlılık yapıcı bir deneyime davet eden bu proje, modern mobil oyun tasarım prensiplerini başarıyla uygulamaktadır.\n\nTeknolojiler:\n• Unity Engine\n• Cinema 4D\n• Substance Painter\n• Audacity",
+                "en": "Carboy Loop is an original hybrid-casual mobile game project developed entirely solo. All software, modeling, and UI design of the game were created by a single developer. This project successfully implements modern mobile game design principles, inviting players to an entertaining and addictive experience.\n\nTechnologies:\n• Unity Engine\n• Cinema 4D\n• Substance Painter\n• Audacity"
+            },
+            "media": ["1.gif", "2.webp", "3.mp4"]
+        },
         {
             "category": "interactive",
             "folder": "gobeklitepe-gathering",
