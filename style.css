@@ -815,3 +815,42 @@ h1 {
         grid-template-columns: 1fr;
     }
 }
+
+.project-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 8px 16px;
+    background: var(--card-bg);
+    border: 1px solid var(--card-border);
+    color: var(--text-color);
+    text-decoration: none;
+    border-radius: var(--border-radius);
+    font-family: var(--font-secondary);
+    font-size: 0.9em;
+    margin-top: 10px;
+    transition: all 0.3s ease;
+}
+
+.project-link i {
+    color: var(--primary-color);
+    font-size: 1.1em;
+    transition: transform 0.3s ease;
+}
+
+.project-link:hover {
+    background: linear-gradient(
+        135deg,
+        var(--primary-color) 0%,
+        var(--secondary-color) 50%,
+        var(--accent-color) 100%
+    );
+    color: white;
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px var(--shadow-color);
+}
+
+.project-link:hover i {
+    color: white;
+    transform: translateX(3px);
+}

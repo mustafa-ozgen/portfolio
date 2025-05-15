@@ -33,7 +33,8 @@
                 "tr": "Carboy Loop, geliştirmiş olduğum özgün bir hibrit-kasual mobil oyun projesidir. Oyuncuları eğlenceli ve bağımlılık yapıcı bir deneyime davet eden bu proje, modern mobil oyun tasarım prensiplerini başarıyla uygulamaktadır. Optimize edilmiş performans ve akıcı oynanış deneyimi, Unity'nin güçlü fizik motoru ve özel shader sistemleri ile desteklenmektedir.\n\nKullanılan yazılım ve uygulamalar:\n• Unity Engine (C# ile özel sistemler)\n• Cinema 4D (3D modelleme ve animasyon)\n• Substance Painter (PBR materyal tasarımı)\n• Audacity (Ses tasarımı ve optimizasyonu)",
                 "en": "Carboy Loop is an original hybrid-casual mobile game project that I developed. This project successfully implements modern mobile game design principles, inviting players to an entertaining and addictive experience. Optimized performance and smooth gameplay are supported by Unity's powerful physics engine and custom shader systems.\n\nSoftware and applications used:\n• Unity Engine (Custom systems with C#)\n• Cinema 4D (3D modeling and animation)\n• Substance Painter (PBR material design)\n• Audacity (Sound design and optimization)"
             },
-            "media": ["1.gif", "2.webp", "3.mp4"]
+            "media": ["1.gif", "2.webp", "3.mp4"],
+            "link": ""
         },
         {
             "category": "interactive",
@@ -50,7 +51,8 @@
                 "tr": "Bu interaktif kurulum, Göbeklitepe'nin dairesel alanlarındaki 12 taştan esinlenerek tasarlanmış platformları içeriyor. Her platformda, ziyaretçilerin ellerini yerleştirebileceği özel oyuklar bulunuyor. Ziyaretçiler ellerini bu oyuklara yerleştirdiğinde, sensörler aracılığıyla algılanan hareketler, mikrodenetleyici üzerinden sisteme aktarılarak 360 derece projeksiyon alanında görsel bir deneyime dönüşüyor. Bu sistem, günümüz insanı ile Göbeklitepe insanları arasında interaktif bir köprü kuruyor.\n\nKullanılan yazılım ve uygulamalar:\n• Arduino ve LDR sensör ağı\n• Serial port üzerinden gerçek zamanlı veri iletişimi",
                 "en": "This interactive installation features platforms inspired by the 12 stones in Göbeklitepe's circular areas. Each platform contains specially designed cavities for visitors to place their hands. When visitors place their hands in these cavities, movements detected through sensors are transmitted via microcontroller to create a visual experience in the 360-degree projection area. This system builds an interactive bridge between modern humans and the people of Göbeklitepe.\n\nSoftware and applications used:\n• Arduino and LDR sensor network\n• Real-time data communication via serial port"
             },
-            "media": ["1.gif", "2.webp", "3.mp4"]
+            "media": ["1.gif", "2.webp", "3.mp4"],
+            "link": "https://en.reo-tek.com/gobeklitepe-the-gathering-sergisi"
         },        {
             "category": "museum",
             "folder": "yesilcam-telefonda",
@@ -66,7 +68,8 @@
                 "tr": "İstanbul Sinema Müzesi için tasarlanan bu etkileşimli deneyim, klasik Türk sinemasının telefon sahnelerini canlandırıyor. Ziyaretçiler, retro telefon ahizesini kaldırdıklarında, ekranda oynayan sahnedeki oyuncunun sesi gerçek zamanlı olarak ahizeden duyuluyor. 20 farklı filmden seçilen sahneler, her etkileşimde rastgele olarak oynatılıyor.\n\nKullanılan yazılım ve uygulamalar:\n• Raspberry Pi ve Raspbian OS\n• Python ile gömülü sistem yazılımı\n• Sensör entegrasyonu ve donanım kontrolü",
                 "en": "This interactive experience for the Istanbul Cinema Museum brings to life phone scenes from classic Turkish cinema. When visitors lift the retro phone handset, the actor's voice from the scene playing on screen is heard in real-time through the handset. Scenes from 20 different films play randomly with each interaction.\n\nSoftware and applications used:\n• Raspberry Pi and Raspbian OS\n• Embedded system software with Python\n• Sensor integration and hardware control"
             },
-            "media": ["1.gif", "2.webp", "3.mp4"]
+            "media": ["1.gif", "2.webp", "3.mp4"],
+            "link": "https://en.reo-tek.com/yesilcam-telefonda"
         },        {
             "category": "museum",
             "folder": "kameradan-hikayeye",
@@ -82,7 +85,8 @@
                 "tr": "İstanbul Sinema Müzesi'nde sergilenen bu interaktif kurulum, sinema tarihine yön veren dört ikonik kamerayı keşfediyor. Bell & Howell, Pathe, Super 8 ve Arriflex kameralarının teknik özellikleri, kamera arkası görüntüler ve dönem bilgileri, dokunmatik ekranlarda sunuluyor. Holosonics teknolojisi ile çalışan noktasal hoparlörler, sesli anlatımı sadece ünitenin önünde duyulabilir kılıyor.\n\nKullanılan yazılım ve uygulamalar:\n• JavaScript tabanlı interaktif frameworkler\n• Dokunmatik ekran sistemleri\n• Holosonics Audio Spotlight\n• Medya senkronizasyon yazılımları",
                 "en": "This interactive installation at the Istanbul Cinema Museum explores four iconic cameras that shaped cinema history. Technical specifications, behind-the-scenes footage, and historical context of Bell & Howell, Pathe, Super 8, and Arriflex cameras are presented on touchscreens. Using Holosonics directional speakers, audio narration is only audible directly in front of each unit.\n\nSoftware and applications used:\n• JavaScript-based interactive frameworks\n• Touchscreen systems\n• Holosonics Audio Spotlight\n• Media synchronization software"
             },
-            "media": ["1.gif", "2.webp", "3.mp4"]
+            "media": ["1.gif", "2.webp", "3.mp4"],
+            "link": "https://en.reo-tek.com/kameradan-hikayeye"
         },        {
             "category": "interactive",
             "folder": "karanligi-aydinlat",
@@ -98,7 +102,8 @@
                 "tr": "Bu yerleştirme, toplumsal şiddet olaylarını ve etkilerini ele alan interaktif bir deneyim sunuyor. Ziyaretçiler, masumiyeti temsil eden ışık halkalarının altından geçerken, şiddet mağdurlarının anılarına tanıklık ediyor. Arkadan gelen ziyaretçilerin gölgeleri, masumiyet kavramını sorgulatan bir boyut katıyor.\n\nKullanılan yazılım ve uygulamalar:\n• Mikrodenetleyici ve C++ yazılımı\n• PCB üzerinde güç yönetimi\n• Sensör ve LED kontrol sistemleri",
                 "en": "This installation offers an interactive experience addressing social violence and its effects. As visitors walk beneath rings of light symbolizing innocence, they witness the memories of violence victims. The shadows of approaching visitors add a dimension that questions the concept of innocence.\n\nSoftware and applications used:\n• Microcontroller and C++ software\n• Power management on PCB\n• Sensor and LED control systems"
             },
-            "media": ["1.gif", "2.webp", "3.mp4"]
+            "media": ["1.gif", "2.webp", "3.mp4"],
+            "link": "https://eca.unwomen.org/en/news/stories/2019/11/un-women-urges-to-light-the-dark"
         },        {
             "category": "digital",
             "folder": "artvision-vr",
@@ -114,7 +119,8 @@
                 "tr": "Bu yenilikçi sanal gerçeklik projesi, müze deneyimini dijital ortama taşıyarak ziyaretçi-eser etkileşimini bilimsel metodlarla analiz ediyor. Dinamik sergi alanında sekiz farklı eserin rastgele yerleşimini sağlayan sistem, ziyaretçi davranışlarını detaylı olarak inceliyor. Unity HDRP ile optimize edilmiş görsel kalite ve Steam VR entegrasyonu, geniş donanım yelpazesinde sorunsuz deneyim sunuyor.\n\nKullanılan yazılım ve uygulamalar:\n• Unity 6 HDRP ve Cinema 4D\n• Steam VR entegrasyonu\n• Özel veri toplama ve analiz sistemleri\n• HighSpec/LowSpec optimizasyonu",
                 "en": "This innovative virtual reality project redefines the museum experience in the digital realm while analyzing visitor-artwork interactions through scientific methods. The system enables random placement of eight different artworks in a dynamic exhibition space, allowing detailed analysis of visitor behavior. Optimized visual quality with Unity HDRP and Steam VR integration ensures a seamless experience across a wide range of hardware.\n\nSoftware and applications used:\n• Unity 6 HDRP and Cinema 4D\n• Steam VR integration\n• Custom data collection and analysis systems\n• HighSpec/LowSpec optimization"
             },
-            "media": ["1.gif", "2.webp", "3.mp4"]
+            "media": ["1.gif", "2.webp", "3.mp4"],
+            "link": ""
         },
         {
             "category": "digital",
@@ -131,7 +137,8 @@
                 "tr": "Bu proje, 3D karakter animasyonu ve motion graphics tekniklerini bir araya getiren yenilikçi bir dans gösterisi sunuyor. Cinema 4D'de oluşturulan humanoid karakterler, Mixamo'dan alınan temel rig yapısı üzerine özel motion teknikleri uygulanarak canlandırılıyor. Her karakter, seçilen müzik ritmine uygun olarak farklı dans stillerini sergiliyor ve Cinema 4D'nin gelişmiş animasyon araçları kullanılarak her sekans, özgün sanat tarzlarını yansıtacak şekilde tasarlanıyor. Octane Render ile gerçekleştirilen yüksek kaliteli render işlemleri, projeye sinematik bir derinlik katıyor.\n\nKullanılan yazılım ve uygulamalar:\n• Cinema 4D (Karakter modelleme, motion teknikleri ve animasyon)\n• Mixamo (Temel karakter rig yapısı)\n• Octane Render (Fotorealistik render ve ışıklandırma)",
                 "en": "This project presents an innovative dance showcase that combines 3D character animation and motion graphics techniques. Humanoid characters created in Cinema 4D are animated using custom motion techniques applied to the base rig structure from Mixamo. Each character performs various dance styles synchronized with the selected music rhythm, with each sequence designed using Cinema 4D's advanced animation tools to reflect unique artistic styles. High-quality rendering with Octane Render adds cinematic depth to the project.\n\nSoftware and applications used:\n• Cinema 4D (Character modeling, motion techniques and animation)\n• Mixamo (Base character rig structure)\n• Octane Render (Photorealistic rendering and lighting)"
             },
-            "media": ["1.gif", "2.webp", "3.mp4"]
+            "media": ["1.gif", "2.webp", "3.mp4"],
+            "link": "https://youtu.be/HqiBT2eZFhE"
         }
     ]
 }

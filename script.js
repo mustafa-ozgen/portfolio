@@ -172,6 +172,21 @@ async function loadProjects() {
                 description.className = 'project-description';
                 description.textContent = project.description[currentLanguage];
                 
+                // Link varsa ekle
+                if (project.link && project.link.trim() !== '') {
+                    const linkElement = document.createElement('a');
+                    linkElement.href = project.link;
+                    linkElement.className = 'project-link';
+                    linkElement.target = '_blank';
+                    linkElement.rel = 'noopener noreferrer';
+                    linkElement.innerHTML = `
+                        <i class="fas fa-external-link-alt"></i>
+                        ${currentLanguage === 'tr' ? 'Projeyi Görüntüle' : 'View Project'}
+                    `;
+                    description.appendChild(document.createElement('br'));
+                    description.appendChild(linkElement);
+                }
+                
                 // Başlık container'ına elementleri ekle
                 titleContainer.appendChild(title);
                 titleContainer.appendChild(subtitle);
