@@ -164,7 +164,7 @@ async function loadProjects() {
                     <div class="toggle-icon">
                         <i class="fas fa-chevron-down"></i>
                     </div>
-                    <span class="toggle-text">${currentLanguage === 'en' ? 'Info' : 'Detay'}</span>
+                    <span class="toggle-text">${currentLanguage === 'en' ? 'Info' : 'Bilgi'}</span>
                 `;
                 
                 // Açıklama
