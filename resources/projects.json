@@ -30,8 +30,8 @@
                 "tr": "Hibrit-Kasual Mobil Oyun"
             },
             "description": {
-                "tr": "Carboy Loop, tamamen solo olarak geliştirilmiş özgün bir hibrit-kasual mobil oyun projesidir. Oyunun tüm yazılım, modelleme ve UI tasarımı tek kişi tarafından gerçekleştirilmiştir. Oyuncuları eğlenceli ve bağımlılık yapıcı bir deneyime davet eden bu proje, modern mobil oyun tasarım prensiplerini başarıyla uygulamaktadır.\n\nTeknolojiler:\n• Unity Engine\n• Cinema 4D\n• Substance Painter\n• Audacity",
-                "en": "Carboy Loop is an original hybrid-casual mobile game project developed entirely solo. All software, modeling, and UI design of the game were created by a single developer. This project successfully implements modern mobile game design principles, inviting players to an entertaining and addictive experience.\n\nTechnologies:\n• Unity Engine\n• Cinema 4D\n• Substance Painter\n• Audacity"
+                "tr": "Carboy Loop, geliştirmiş olduğum özgün bir hibrit-kasual mobil oyun projesidir. Oyuncuları eğlenceli ve bağımlılık yapıcı bir deneyime davet eden bu proje, modern mobil oyun tasarım prensiplerini başarıyla uygulamaktadır. Optimize edilmiş performans ve akıcı oynanış deneyimi, Unity'nin güçlü fizik motoru ve özel shader sistemleri ile desteklenmektedir.\n\nKullanılan uygulamalar:\n• Unity Engine (C# ile özel sistemler)\n• Cinema 4D (3D modelleme ve animasyon)\n• Substance Painter (PBR materyal tasarımı)\n• Audacity (Ses tasarımı ve optimizasyonu)",
+                "en": "Carboy Loop is an original hybrid-casual mobile game project that I developed. This project successfully implements modern mobile game design principles, inviting players to an entertaining and addictive experience. Optimized performance and smooth gameplay are supported by Unity's powerful physics engine and custom shader systems.\n\nApplications used:\n• Unity Engine (Custom systems with C#)\n• Cinema 4D (3D modeling and animation)\n• Substance Painter (PBR material design)\n• Audacity (Sound design and optimization)"
             },
             "media": ["1.gif", "2.webp", "3.mp4"]
         },
