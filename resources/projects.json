@@ -115,6 +115,23 @@
                 "en": "This innovative virtual reality project redefines the museum experience in the digital realm while analyzing visitor-artwork interactions through scientific methods. The system enables random placement of eight different artworks in a dynamic exhibition space, allowing detailed analysis of visitor behavior. Optimized visual quality with Unity HDRP and Steam VR integration ensures a seamless experience across a wide range of hardware.\n\nSoftware and applications used:\n• Unity 6 HDRP and Cinema 4D\n• Steam VR integration\n• Custom data collection and analysis systems\n• HighSpec/LowSpec optimization"
             },
             "media": ["1.gif", "2.webp", "3.mp4"]
+        },
+        {
+            "category": "digital",
+            "folder": "dance-showreel",
+            "title": {
+                "en": "Dance Showreel",
+                "tr": "Dans Showreel"
+            },
+            "subtitle": {
+                "en": "Motion Graphics & Character Animation",
+                "tr": "Motion Graphics & Karakter Animasyonu"
+            },
+            "description": {
+                "tr": "Bu proje, 3D karakter animasyonu ve motion graphics tekniklerini bir araya getiren yenilikçi bir dans gösterisi sunuyor. Cinema 4D'de oluşturulan humanoid karakterler, Mixamo üzerinden gelişmiş rigging teknikleriyle canlandırılıyor. Karakterler, seçilen müzik ritmine uygun olarak farklı dans stillerini sergiliyor ve her sekans, özgün sanat tarzlarını yansıtacak şekilde tasarlanıyor. Octane Render ile gerçekleştirilen yüksek kaliteli render işlemleri, projeye sinematik bir derinlik katıyor.\n\nKullanılan yazılım ve uygulamalar:\n• Cinema 4D (Karakter modelleme ve animasyon)\n• Mixamo (Karakter rigging ve motion capture)\n• Octane Render (Fotorealistik render ve ışıklandırma)",
+                "en": "This project presents an innovative dance showcase that combines 3D character animation and motion graphics techniques. Humanoid characters created in Cinema 4D are brought to life through advanced rigging techniques in Mixamo. The characters perform various dance styles synchronized with the selected music rhythm, with each sequence designed to reflect unique artistic styles. High-quality rendering with Octane Render adds cinematic depth to the project.\n\nSoftware and applications used:\n• Cinema 4D (Character modeling and animation)\n• Mixamo (Character rigging and motion capture)\n• Octane Render (Photorealistic rendering and lighting)"
+            },
+            "media": ["1.gif", "2.webp", "3.mp4"]
         }
     ]
 }
