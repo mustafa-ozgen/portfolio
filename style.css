@@ -793,13 +793,24 @@ h1 {
 
 .category-projects {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(min(100%, 1280px), 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(min(100%, 480px), 1fr));
     gap: 2rem;
     margin: 0;
-    justify-items: center;
 }
 
 @media (max-width: 1280px) {
+    .category-projects {
+        grid-template-columns: repeat(auto-fit, minmax(min(100%, 400px), 1fr));
+    }
+}
+
+@media (max-width: 768px) {
+    .category-projects {
+        grid-template-columns: repeat(auto-fit, minmax(min(100%, 300px), 1fr));
+    }
+}
+
+@media (max-width: 480px) {
     .category-projects {
         grid-template-columns: 1fr;
     }
