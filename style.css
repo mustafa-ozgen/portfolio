@@ -367,8 +367,8 @@ h1 {
 
 /* GIF'ler için özel stil */
 .project-media:has(img[src$="1.gif"]) img {
-    height: calc(100% - 20px); /* Üstten ve alttan 12.5px'lik alanı kaldır */
-    margin: 10px 0; /* Üstten ve alttan 12.5px boşluk */
+    height: calc(100% - 30px); /* Üstten ve alttan 12.5px'lik alanı kaldır */
+    margin: 15px 0; /* Üstten ve alttan 12.5px boşluk */
     object-fit: fill; /* GIF'in tam olarak doldurmasını sağla */
 }
 
