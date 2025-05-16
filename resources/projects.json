@@ -139,6 +139,23 @@
             },
             "media": ["1.gif", "2.webp", "3.mp4"],
             "link": ""
+        },        {
+            "category": "digital",
+            "folder": "pixar-intro",
+            "title": {
+                "en": "Pixar Intro",
+                "tr": "Pixar Intro"
+            },
+            "subtitle": {
+                "en": "Virtual Gallery Experiment",
+                "tr": "Sanal Galeri Deneyimi"
+            },
+            "description": {
+                "tr": "Bu yenilikçi sanal gerçeklik projesi, müze deneyimini dijital ortama taşıyarak ziyaretçi-eser etkileşimini bilimsel metodlarla analiz ediyor. Dinamik sergi alanında sekiz farklı eserin rastgele yerleşimini sağlayan sistem, ziyaretçi davranışlarını detaylı olarak inceliyor. Unity HDRP ile optimize edilmiş görsel kalite ve Steam VR entegrasyonu, geniş donanım yelpazesinde sorunsuz deneyim sunuyor.\n\nKullanılan yazılım ve uygulamalar:\n• Unity 6 HDRP ve Cinema 4D\n• Steam VR entegrasyonu\n• Özel veri toplama ve analiz sistemleri\n• HighSpec/LowSpec optimizasyonu",
+                "en": "This innovative virtual reality project redefines the museum experience in the digital realm while analyzing visitor-artwork interactions through scientific methods. The system enables random placement of eight different artworks in a dynamic exhibition space, allowing detailed analysis of visitor behavior. Optimized visual quality with Unity HDRP and Steam VR integration ensures a seamless experience across a wide range of hardware.\n\nSoftware and applications used:\n• Unity 6 HDRP and Cinema 4D\n• Steam VR integration\n• Custom data collection and analysis systems\n• HighSpec/LowSpec optimization"
+            },
+            "media": ["1.gif", "2.webp", "3.mp4"],
+            "link": ""
         },
         {
             "category": "digital",
