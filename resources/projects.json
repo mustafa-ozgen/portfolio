@@ -20,6 +20,24 @@
     "projects": [
         {
             "category": "game",
+            "folder": "idle-energy-master",
+            "title": {
+            "en": "Idle Energy Master",
+            "tr": "Idle Energy Master"
+            },
+            "subtitle": {
+            "en": "Mobile Game",
+            "tr": "Mobil Oyun"
+            },
+            "description": {
+            "tr": "Carboy Loop, geliştirmiş olduğum özgün bir hibrit-kasual mobil oyun projesidir. Oyuncuları eğlenceli ve bağımlılık yapıcı bir deneyime davet eden bu proje, modern mobil oyun tasarım prensiplerini başarıyla uygulamaktadır. Optimize edilmiş performans ve akıcı oynanış deneyimi, Unity'nin güçlü fizik motoru ve özel shader sistemleri ile desteklenmektedir.\n\nKullanılan yazılım ve uygulamalar:\n• Unity Engine (C# ile özel sistemler)\n• Cinema 4D (3D modelleme ve animasyon)\n• Substance Painter (PBR materyal tasarımı)\n• Audacity (Ses tasarımı ve optimizasyonu)",
+            "en": "Carboy Loop is an original hybrid-casual mobile game project that I developed. This project successfully implements modern mobile game design principles, inviting players to an entertaining and addictive experience. Optimized performance and smooth gameplay are supported by Unity's powerful physics engine and custom shader systems.\n\nSoftware and applications used:\n• Unity Engine (Custom systems with C#)\n• Cinema 4D (3D modeling and animation)\n• Substance Painter (PBR material design)\n• Audacity (Sound design and optimization)"
+            },
+            "media": ["1.gif", "2.webp", "3.mp4"],
+            "link": "https://youtu.be/12TehWtX1kw"
+        },
+        {
+            "category": "game",
             "folder": "carboy-loop",
             "title": {
                 "en": "Carboy Loop",
