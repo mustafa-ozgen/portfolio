@@ -378,9 +378,9 @@ h1 {
     }
 
     .profile-image {
-        width: 200px;
-        height: 400px;
-        margin: 0 auto;
+        width: 256px;
+        height: 256px;
+        border-radius: 5px;
     }
 
     .menu {
@@ -433,8 +433,8 @@ h1 {
     }
 
     .profile-image {
-        width: 180px;
-        height: 360px;
+        width: 220px;
+        height: 220px;
     }
 
     .social-links {
@@ -523,7 +523,6 @@ h1 {
     margin-bottom: 2rem;
 }
 
-/* Profil resmi için tek tanım yeterli */
 .profile-image {
     width: 256px;
     height: 512px;
@@ -541,6 +540,21 @@ h1 {
     height: 100%;
     object-fit: cover;
     display: block;
+}
+
+@media (max-width: 768px) {
+    .profile-image {
+        width: 256px;
+        height: 256px;
+        border-radius: 5px;
+    }
+}
+
+@media (max-width: 480px) {
+    .profile-image {
+        width: 220px;
+        height: 220px;
+    }
 }
 
 /* About Header Styles */

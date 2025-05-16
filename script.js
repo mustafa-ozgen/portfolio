@@ -284,13 +284,17 @@ async function loadProjects() {
 async function loadProfileImage() {
     const profileImage = document.getElementById('profileImage');
     const imageExtensions = ['.webp', '.jpeg', '.jpg', '.png'];
+    const isMobile = window.innerWidth <= 768;
+    
+    // Mobil cihazlar için farklı bir fotoğraf kullan
+    const imageName = isMobile ? 'profile2' : 'profile';
     
     for (const ext of imageExtensions) {
         try {
-            const response = await fetch(`images/profile${ext}`);
+            const response = await fetch(`images/${imageName}${ext}`);
             if (response.ok) {
                 const img = document.createElement('img');
-                img.src = `images/profile${ext}`;
+                img.src = `images/${imageName}${ext}`;
                 img.alt = 'Profile Picture';
                 profileImage.appendChild(img);
                 break;
@@ -300,6 +304,13 @@ async function loadProfileImage() {
         }
     }
 }
+
+// Ekran boyutu değiştiğinde profil fotoğrafını güncelle
+window.addEventListener('resize', debounce(() => {
+    const profileImage = document.getElementById('profileImage');
+    profileImage.innerHTML = ''; // Mevcut fotoğrafı temizle
+    loadProfileImage(); // Yeni fotoğrafı yükle
+}, 250));
 
 // Sayfa değiştirme fonksiyonu
 function showPage(pageId) {
