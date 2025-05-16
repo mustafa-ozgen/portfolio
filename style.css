@@ -47,7 +47,7 @@ body {
 
 .terminal {
     width: 95%;
-    max-width: 1400px;
+    max-width: 1800px;
     height: calc(100vh - 32px);
     margin: 0 auto;
     padding: 24px;
@@ -618,26 +618,50 @@ h1 {
 
 .category-projects {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(min(100%, 480px), 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(min(100%, 400px), 1fr));
     gap: 2rem;
     margin: 0;
 }
 
-@media (max-width: 1280px) {
-    .category-projects {
-        grid-template-columns: repeat(auto-fit, minmax(min(100%, 400px), 1fr));
+@media (max-width: 1920px) {
+    .terminal {
+        max-width: 1600px;
     }
 }
 
-@media (max-width: 768px) {
-    .category-projects {
-        grid-template-columns: repeat(auto-fit, minmax(min(100%, 300px), 1fr));
+@media (max-width: 1600px) {
+    .terminal {
+        max-width: 1400px;
     }
 }
 
-@media (max-width: 480px) {
-    .category-projects {
-        grid-template-columns: 1fr;
+@media (max-width: 1400px) {
+    .terminal {
+        max-width: 1200px;
+    }
+}
+
+@media (max-width: 1200px) {
+    .terminal {
+        max-width: 1000px;
+    }
+}
+
+@media (max-width: 1000px) {
+    .terminal {
+        max-width: 800px;
+    }
+}
+
+@media (max-width: 800px) {
+    .terminal {
+        max-width: 600px;
+    }
+}
+
+@media (max-width: 600px) {
+    .terminal {
+        max-width: 400px;
     }
 }
 
@@ -943,27 +967,9 @@ h1 {
 
 .category-projects {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(min(100%, 480px), 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(min(100%, 400px), 1fr));
     gap: 2rem;
     margin: 0;
-}
-
-@media (max-width: 1280px) {
-    .category-projects {
-        grid-template-columns: repeat(auto-fit, minmax(min(100%, 400px), 1fr));
-    }
-}
-
-@media (max-width: 768px) {
-    .category-projects {
-        grid-template-columns: repeat(auto-fit, minmax(min(100%, 300px), 1fr));
-    }
-}
-
-@media (max-width: 480px) {
-    .category-projects {
-        grid-template-columns: 1fr;
-    }
 }
 
 .project-link {
