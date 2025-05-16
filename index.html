@@ -3,21 +3,24 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Mustafa Özgen - Portfolio Website" />
+  <meta name="theme-color" content="#2563EB" />
   <title>Mustafa Özgen Portfolio</title>
   <link rel="stylesheet" href="style.css" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 </head>
 <body>
   <div class="terminal">
-    <div class="language-selector">
-      <button onclick="changeLanguage('en')" class="lang-btn active" data-lang="en">EN</button>
-      <button onclick="changeLanguage('tr')" class="lang-btn" data-lang="tr">TR</button>
-    </div>
-
     <div class="menu">
       <button onclick="showPage('about')" data-tr="Ben Kimim" data-en="About Me">Ben Kimim</button>
       <button onclick="showPage('projects')" data-tr="Projelerim" data-en="Projects">Projelerim</button>
       <button onclick="showPage('contact')" data-tr="İletişim" data-en="Contact">İletişim</button>
+      <div class="language-selector">
+        <button onclick="changeLanguage('en')" class="lang-btn active" data-lang="en">EN</button>
+        <button onclick="changeLanguage('tr')" class="lang-btn" data-lang="tr">TR</button>
+      </div>
     </div>
 
     <div id="about" class="page">
@@ -34,14 +37,14 @@
     <div id="projects" class="page hidden">
       <h1 data-tr="Projelerim" data-en="Projects">Projelerim</h1>
       <div id="projects-container">
-        <!-- Projeler JavaScript ile buraya eklenecek -->
+        <!-- Projects will be added by JavaScript -->
       </div>
     </div>
 
     <div id="contact" class="page hidden">
       <h1 data-tr="İletişim" data-en="Contact">İletişim</h1>
       <div class="contact-container">
-        <!-- İçerik JavaScript ile doldurulacak -->
+        <!-- Content will be filled by JavaScript -->
       </div>
     </div>
   </div>

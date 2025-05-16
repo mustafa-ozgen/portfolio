@@ -108,6 +108,7 @@ body {
     flex-wrap: wrap;
     gap: 12px;
     justify-content: center;
+    align-items: center;
 }
 
 button {
@@ -412,9 +413,43 @@ h1 {
         padding: 12px;
     }
 
+    .menu {
+        gap: 8px;
+        margin-bottom: 20px;
+    }
+
     .menu button {
         padding: 8px 12px;
         font-size: 0.85rem;
+    }
+
+    .language-selector {
+        position: static;
+        margin: 0;
+        padding: 0;
+        background: none;
+        box-shadow: none;
+        backdrop-filter: none;
+        display: inline-flex;
+        gap: 4px;
+    }
+
+    .lang-btn {
+        padding: 8px 12px;
+        font-size: 0.85rem;
+        background: var(--card-bg);
+        border: 1px solid var(--card-border);
+        color: var(--text-color);
+    }
+
+    .lang-btn.active {
+        background: var(--primary-color);
+        color: white;
+    }
+
+    .lang-btn:hover {
+        background: var(--primary-color);
+        color: white;
     }
 
     .profile-image {
@@ -424,15 +459,6 @@ h1 {
 
     .social-links {
         justify-content: center;
-    }
-
-    .language-selector {
-        position: relative;
-        top: 0;
-        right: 0;
-        margin-bottom: 16px;
-        justify-content: center;
-        width: 100%;
     }
 }
 
