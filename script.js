@@ -482,10 +482,8 @@ async function loadContactInfo() {
 function changeLanguage(lang) {
     currentLanguage = lang;
     
-    // Dil butonlarını güncelle
-    document.querySelectorAll('.lang-btn').forEach(btn => {
-        btn.classList.toggle('active', btn.dataset.lang === lang);
-    });
+    // Dil butonunu güncelle
+    document.querySelector('.current-lang').textContent = lang.toUpperCase();
     
     // HTML lang attribute'unu güncelle
     document.documentElement.lang = lang;
@@ -512,6 +510,12 @@ function changeLanguage(lang) {
     
     // Projeleri yeniden yükle
     loadProjects();
+}
+
+// Dil değiştirme toggle fonksiyonu
+function toggleLanguage() {
+    const newLang = currentLanguage === 'en' ? 'tr' : 'en';
+    changeLanguage(newLang);
 }
 
 // Sayfa yüklendiğinde

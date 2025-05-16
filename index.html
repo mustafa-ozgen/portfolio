@@ -18,8 +18,10 @@
       <button onclick="showPage('projects')" data-tr="Projelerim" data-en="Projects">Projelerim</button>
       <button onclick="showPage('contact')" data-tr="İletişim" data-en="Contact">İletişim</button>
       <div class="language-selector">
-        <button onclick="changeLanguage('en')" class="lang-btn active" data-lang="en">EN</button>
-        <button onclick="changeLanguage('tr')" class="lang-btn" data-lang="tr">TR</button>
+        <button onclick="toggleLanguage()" class="lang-btn">
+          <i class="fas fa-globe"></i>
+          <span class="current-lang">EN</span>
+        </button>
       </div>
     </div>
 
