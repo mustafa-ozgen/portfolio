@@ -22,16 +22,16 @@
             "category": "game",
             "folder": "idle-energy-master",
             "title": {
-            "en": "Idle Energy Master",
-            "tr": "Idle Energy Master"
+                "en": "Idle Energy Master",
+                "tr": "Idle Energy Master"
             },
             "subtitle": {
-            "en": "Mobile Game",
-            "tr": "Mobil Oyun"
+                "en": "Mobile Game",
+                "tr": "Mobil Oyun"
             },
             "description": {
-            "tr": "Carboy Loop, geliştirmiş olduğum özgün bir hibrit-kasual mobil oyun projesidir. Oyuncuları eğlenceli ve bağımlılık yapıcı bir deneyime davet eden bu proje, modern mobil oyun tasarım prensiplerini başarıyla uygulamaktadır. Optimize edilmiş performans ve akıcı oynanış deneyimi, Unity'nin güçlü fizik motoru ve özel shader sistemleri ile desteklenmektedir.\n\nKullanılan yazılım ve uygulamalar:\n• Unity Engine (C# ile özel sistemler)\n• Cinema 4D (3D modelleme ve animasyon)\n• Substance Painter (PBR materyal tasarımı)\n• Audacity (Ses tasarımı ve optimizasyonu)",
-            "en": "Carboy Loop is an original hybrid-casual mobile game project that I developed. This project successfully implements modern mobile game design principles, inviting players to an entertaining and addictive experience. Optimized performance and smooth gameplay are supported by Unity's powerful physics engine and custom shader systems.\n\nSoftware and applications used:\n• Unity Engine (Custom systems with C#)\n• Cinema 4D (3D modeling and animation)\n• Substance Painter (PBR material design)\n• Audacity (Sound design and optimization)"
+                "en": "A casual mobile game where you collect coins to develop wind turbines, solar panels, and nuclear plants. Expand your area and unlock new platforms to increase earnings in this fun, relaxing, and stylized idle game.",
+                "tr": "Casual bir mobil oyun, tüm geliştirme süreci bana ait, gece-gündüz döngüsü olan rüzgar türbinleri, güneş panelleri ve nükleer santralleri topladığımız coinler ile geliştirerek alanımızı büyütmeye ve geliştirmeler yaparak yeni platformlar ile daha çok kazanç sağlamaya çalıştığımız böyle eğlenceli sakin ve stilize bir idle oyun."
             },
             "media": ["1.gif", "2.webp", "3.mp4"],
             "link": "https://youtu.be/12TehWtX1kw"
