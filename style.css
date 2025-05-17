@@ -711,6 +711,9 @@ h1 {
     grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
     gap: 24px;
     padding: 16px;
+    max-width: 1200px;
+    margin: 0 auto;
+    box-sizing: border-box;
 }
 
 .contact-section {
@@ -719,6 +722,8 @@ h1 {
     border-radius: var(--border-radius);
     box-shadow: 0 8px 24px var(--shadow-color);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
+    box-sizing: border-box;
+    width: 100%;
 }
 
 .contact-section:hover {
@@ -744,6 +749,7 @@ h1 {
     transition: all 0.3s ease;
     width: 100%;
     box-sizing: border-box;
+    word-break: break-word;
 }
 
 .contact-item:hover {
@@ -771,6 +777,9 @@ h1 {
     transition: all 0.3s ease;
     margin: 8px 0;
     box-shadow: 0 4px 12px var(--shadow-color);
+    width: 100%;
+    box-sizing: border-box;
+    word-break: break-word;
 }
 
 .terminal-link:hover {
@@ -794,7 +803,7 @@ h1 {
 
 .terminal-link span {
     font-size: 1.1em;
-    white-space: nowrap;
+    white-space: normal;
     overflow: hidden;
     text-overflow: ellipsis;
 }
@@ -804,45 +813,22 @@ h1 {
     gap: 12px;
     flex-wrap: wrap;
     margin-top: 16px;
+    width: 100%;
 }
 
-/* Responsive adjustments */
-@media (max-width: 768px) {
+@media (max-width: 820px) {
     .contact-container {
-        grid-template-columns: 1fr !important;
-    }
-
-    .contact-section {
-        padding: 20px;
-    }
-
-    .social-links {
-        flex-direction: column;
-        align-items: stretch;
-    }
-    
-    .contact-section h2 {
-        font-size: 1.3em;
-        margin-bottom: 20px;
-    }
-    
-    .terminal-link {
-        padding: 12px 15px;
-    }
-    
-    .terminal-link i {
-        font-size: 1.3em;
-    }
-    
-    .terminal-link span {
-        font-size: 1em;
+        grid-template-columns: 1fr;
+        max-width: 600px;
     }
 }
 
 @media (max-width: 480px) {
     .contact-container {
+        grid-template-columns: 1fr;
         padding: 10px;
         gap: 15px;
+        max-width: 100%;
     }
 
     .contact-section {
@@ -856,6 +842,7 @@ h1 {
 
     .terminal-link {
         padding: 10px;
+        font-size: 0.9em;
     }
 
     .terminal-link i {
@@ -868,8 +855,32 @@ h1 {
     }
 
     .social-links {
-        flex-direction: column;
-        align-items: stretch;
+        gap: 8px;
+    }
+}
+
+@media (max-width: 360px) {
+    .contact-container {
+        padding: 8px;
+        gap: 12px;
+    }
+
+    .contact-section {
+        padding: 12px;
+    }
+
+    .terminal-link {
+        padding: 8px;
+        font-size: 0.85em;
+    }
+
+    .terminal-link i {
+        font-size: 1.1em;
+        margin-right: 8px;
+    }
+
+    .terminal-link span {
+        font-size: 0.85em;
     }
 }
 
