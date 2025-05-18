@@ -195,18 +195,18 @@
         },
         {
             "category": "digital",
-            "folder": "motion-master",
+            "folder": "motioncaoture-toart",
             "title": {
-                "en": "Motion Master",
-                "tr": "Hareket Ustası"
+                "en": "Motion Capture to Art",
+                "tr": "Motion Capture to Art"
             },
             "subtitle": {
-                "en": "Advanced Motion Graphics & Animation",
-                "tr": "Gelişmiş Motion Graphics & Animasyon"
+                "en": "Real-Time Motion Capture & Visual Art",
+                "tr": "Gerçek Zamanlı Motion Capture & Görsel Sanat"
             },
             "description": {
-                "tr": "Bu proje, 3D karakter animasyonu ve motion graphics tekniklerini bir araya getiren yenilikçi bir hareket gösterisi sunuyor. Cinema 4D'de oluşturulan karakterler, özel rig yapıları üzerine gelişmiş motion teknikleri uygulanarak canlandırılıyor. Her karakter, seçilen müzik ritmine uygun olarak farklı hareket stillerini sergiliyor ve Cinema 4D'nin gelişmiş animasyon araçları kullanılarak her sekans, özgün sanat tarzlarını yansıtacak şekilde tasarlanıyor. Octane Render ile gerçekleştirilen yüksek kaliteli render işlemleri, projeye sinematik bir derinlik katıyor.\n\nKullanılan yazılım ve uygulamalar:\n• Cinema 4D (Karakter modelleme, motion teknikleri ve animasyon)\n• Özel karakter rig yapıları\n• Octane Render (Fotorealistik render ve ışıklandırma)",
-                "en": "This project presents an innovative motion showcase that combines 3D character animation and motion graphics techniques. Characters created in Cinema 4D are animated using advanced motion techniques applied to custom rig structures. Each character performs various movement styles synchronized with the selected music rhythm, with each sequence designed using Cinema 4D's advanced animation tools to reflect unique artistic styles. High-quality rendering with Octane Render adds cinematic depth to the project.\n\nSoftware and applications used:\n• Cinema 4D (Character modeling, motion techniques and animation)\n• Custom character rig structures\n• Octane Render (Photorealistic rendering and lighting)"
+                "tr": "Bu proje, gerçek dansçıların hareket verilerini kullanarak sanal ortamda sanatsal ve soyut bir deneyim sunuyor. Motion capture verileri, TouchDesigner üzerinden gerçek zamanlı olarak görselleştirilebiliyor ve kamera görüntüsünden pose algılama teknolojisi ile 2D görüntüden 3D ortama anlık insan pozisyonu aktarımı yapılabiliyor. Her sekans, ham insan hareketini büyüleyici görsel sanata dönüştürüyor ve motion graph teknikleri ile ifade edici dijital koreografiyi harmanlıyor. Cinema 4D'nin gelişmiş animasyon araçları kullanılarak her sahne, özgün sanat tarzlarını yansıtacak şekilde tasarlanıyor.\n\nKullanılan yazılım ve uygulamalar:\n• TouchDesigner (Gerçek zamanlı görselleştirme ve interaktif sistemler)\n• Cinema 4D (Karakter modelleme ve motion teknikleri)\n• Motion Capture ve Pose Estimation sistemleri\n• Octane Render (Fotorealistik render ve ışıklandırma)\n• Python (Veri işleme ve analiz)",
+                "en": "This project presents an artistic and abstract experience using real dancer motion data in a virtual environment. The motion capture data can be visualized in real-time through TouchDesigner, and human poses can be transferred from 2D camera feed to 3D space using pose estimation technology. Each sequence transforms raw human movement into captivating visual art, blending motion graph techniques with expressive digital choreography. Using Cinema 4D's advanced animation tools, each scene is designed to reflect unique artistic styles.\n\nSoftware and applications used:\n• TouchDesigner (Real-time visualization and interactive systems)\n• Cinema 4D (Character modeling and motion techniques)\n• Motion Capture and Pose Estimation systems\n• Octane Render (Photorealistic rendering and lighting)\n• Python (Data processing and analysis)"
             },
             "media": ["1.gif", "2.webp", "3.mp4"],
             "link": "https://youtu.be/gF7Cg6mt__Y"
