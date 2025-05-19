@@ -132,21 +132,21 @@
             "link": "https://eca.unwomen.org/en/news/stories/2019/11/un-women-urges-to-light-the-dark"
         },        {
             "category": "virtual-reality",
-            "folder": "artvision-vr",
+            "folder": "tedas-digital-workshop",
             "title": {
-                "en": "Artvision VR",
-                "tr": "Artvision VR"
+                "en": "TEDAŞ Digital Workshop",
+                "tr": "TEDAŞ Dijital Atölye"
             },
             "subtitle": {
-                "en": "Virtual Gallery Experiment",
-                "tr": "Sanal Galeri Deneyimi"
+                "en": "AR/VR Training Platform",
+                "tr": "AR/VR Eğitim Platformu"
             },
             "description": {
-                "tr": "Bu yenilikçi sanal gerçeklik projesi, müze deneyimini dijital ortama taşıyarak ziyaretçi-eser etkileşimini bilimsel metodlarla analiz ediyor. Dinamik sergi alanında sekiz farklı eserin rastgele yerleşimini sağlayan sistem, ziyaretçi davranışlarını detaylı olarak inceliyor. Unity HDRP ile optimize edilmiş görsel kalite ve Steam VR entegrasyonu, geniş donanım yelpazesinde sorunsuz deneyim sunuyor.\n\nKullanılan yazılım ve uygulamalar:\n• Unity 6 HDRP ve Cinema 4D\n• Steam VR entegrasyonu\n• Özel veri toplama ve analiz sistemleri\n• HighSpec/LowSpec optimizasyonu",
-                "en": "This innovative virtual reality project redefines the museum experience in the digital realm while analyzing visitor-artwork interactions through scientific methods. The system enables random placement of eight different artworks in a dynamic exhibition space, allowing detailed analysis of visitor behavior. Optimized visual quality with Unity HDRP and Steam VR integration ensures a seamless experience across a wide range of hardware.\n\nSoftware and applications used:\n• Unity 6 HDRP and Cinema 4D\n• Steam VR integration\n• Custom data collection and analysis systems\n• HighSpec/LowSpec optimization"
+                "en": "As the lead 3D artist and technical director for TEDAŞ's digital training platform, I spearheaded the development of high-fidelity 3D assets and interactive educational content. My technical expertise in PBR texturing and material creation enabled the production of photorealistic workshop environments. I implemented advanced lighting techniques through light baking and environment design, ensuring optimal performance across AR/VR and tablet platforms. The project's success was largely driven by my implementation of custom animation systems and optimization strategies in Unity Engine, resulting in a seamless and immersive training experience.\n\nTechnical implementation and tools:\n• Cinema 4D (High-poly modeling and UV optimization)\n• Substance Painter (Custom PBR material workflows)\n• Photoshop (Texture atlas creation and optimization)\n• GIMP (Additional texture processing)\n• Unity Engine (Custom shader development and optimization)",
+                "tr": "TEDAŞ'ın dijital eğitim platformunda baş 3D sanatçı ve teknik direktör olarak, yüksek kaliteli 3D varlıkların ve interaktif eğitim içeriklerinin geliştirilmesine öncülük ettim. PBR texturing ve materyal oluşturma konusundaki teknik uzmanlığım, fotorealistik atölye ortamlarının üretilmesini sağladı. Light baking ve environment design tekniklerini kullanarak gelişmiş aydınlatma sistemleri uyguladım, böylece AR/VR ve tablet platformlarında optimum performans elde edildi. Unity Engine'de özel animasyon sistemleri ve optimizasyon stratejileri geliştirerek, kesintisiz ve sürükleyici bir eğitim deneyimi oluşturdum.\n\nTeknik uygulama ve araçlar:\n• Cinema 4D (Yüksek detaylı modelleme ve UV optimizasyonu)\n• Substance Painter (Özel PBR materyal iş akışları)\n• Photoshop (Texture atlas oluşturma ve optimizasyonu)\n• GIMP (Ek doku işleme)\n• Unity Engine (Özel shader geliştirme ve optimizasyon)"
             },
             "media": ["1.gif", "2.webp", "3.mp4"],
-            "link": ""
+            "link": "https://www.youtube.com/watch?v=G4m1dRfdEDI"
         },         {
             "category": "digital-art",
             "folder": "hybrid-reality",
@@ -233,6 +233,24 @@
             "description": {
                 "en": "AutoAsset3D is an innovative pipeline that transforms 2D objects into game-ready 3D assets using artificial intelligence and various specialized tools. The system processes input images through a carefully designed workflow, producing optimized low-poly 3D models with texture optimization, making them immediately usable across all major game engines. This automated solution significantly reduces the time and technical expertise required for 3D asset creation.\n\nSoftware and applications used:\n• Trellis AI (AI-powered image processing)\n• Meshlab (3D mesh optimization)\n• Cinema 4D (3D modeling and refinement)\n• Substance Painter (Texture optimization)\n• Unity (Final asset testing and validation)",
                 "tr": "AutoAsset3D, yapay zeka ve çeşitli özel araçlar kullanarak 2D objeleri oyuna hazır 3D varlıklara dönüştüren yenilikçi bir pipeline'dır. Sistem, giriş görüntülerini özenle tasarlanmış bir iş akışı üzerinden işleyerek, doku optimizasyonu yapılmış low-poly 3D modeller üretir ve bunları tüm büyük oyun motorlarında kullanıma hazır hale getirir. Bu otomatik çözüm, 3D varlık oluşturma için gereken süreyi ve teknik uzmanlığı önemli ölçüde azaltır.\n\nKullanılan yazılım ve uygulamalar:\n• Trellis AI (Yapay zeka destekli görüntü işleme)\n• Meshlab (3D mesh optimizasyonu)\n• Cinema 4D (3D modelleme ve iyileştirme)\n• Substance Painter (Doku optimizasyonu)\n• Unity (Final varlık testi ve doğrulama)"
+            },
+            "media": ["1.gif", "2.webp", "3.mp4"],
+            "link": ""
+        },
+        {
+            "category": "virtual-reality",
+            "folder": "artvision-vr",
+            "title": {
+                "en": "Artvision VR",
+                "tr": "Artvision VR"
+            },
+            "subtitle": {
+                "en": "Virtual Gallery Experiment",
+                "tr": "Sanal Galeri Deneyimi"
+            },
+            "description": {
+                "tr": "Bu yenilikçi sanal gerçeklik projesi, müze deneyimini dijital ortama taşıyarak ziyaretçi-eser etkileşimini bilimsel metodlarla analiz ediyor. Dinamik sergi alanında sekiz farklı eserin rastgele yerleşimini sağlayan sistem, ziyaretçi davranışlarını detaylı olarak inceliyor. Unity HDRP ile optimize edilmiş görsel kalite ve Steam VR entegrasyonu, geniş donanım yelpazesinde sorunsuz deneyim sunuyor.\n\nKullanılan yazılım ve uygulamalar:\n• Unity 6 HDRP ve Cinema 4D\n• Steam VR entegrasyonu\n• Özel veri toplama ve analiz sistemleri\n• HighSpec/LowSpec optimizasyonu",
+                "en": "This innovative virtual reality project redefines the museum experience in the digital realm while analyzing visitor-artwork interactions through scientific methods. The system enables random placement of eight different artworks in a dynamic exhibition space, allowing detailed analysis of visitor behavior. Optimized visual quality with Unity HDRP and Steam VR integration ensures a seamless experience across a wide range of hardware.\n\nSoftware and applications used:\n• Unity 6 HDRP and Cinema 4D\n• Steam VR integration\n• Custom data collection and analysis systems\n• HighSpec/LowSpec optimization"
             },
             "media": ["1.gif", "2.webp", "3.mp4"],
             "link": ""
