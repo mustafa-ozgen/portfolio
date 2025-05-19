@@ -491,6 +491,10 @@ async function loadContactInfo() {
 
 // Dil değiştirme fonksiyonu
 function changeLanguage(lang) {
+    // Mevcut scroll pozisyonunu kaydet
+    const currentScroll = window.scrollY;
+    const projectsScroll = document.getElementById('projects').scrollTop;
+    
     currentLanguage = lang;
     
     // Dil butonunu güncelle
@@ -520,7 +524,11 @@ function changeLanguage(lang) {
     loadContactInfo();
     
     // Projeleri yeniden yükle
-    loadProjects();
+    loadProjects().then(() => {
+        // Scroll pozisyonlarını geri yükle
+        window.scrollTo(0, currentScroll);
+        document.getElementById('projects').scrollTop = projectsScroll;
+    });
 }
 
 // Dil değiştirme toggle fonksiyonu
