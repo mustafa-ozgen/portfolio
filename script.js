@@ -312,137 +312,48 @@ window.addEventListener('resize', debounce(() => {
     loadProfileImage(); // Yeni fotoğrafı yükle
 }, 250));
 
-// Terminal boot-up animasyonu
-function initializeTerminal() {
-    const terminal = document.querySelector('.terminal');
-    const menu = document.querySelector('.menu');
-    const pages = document.querySelectorAll('.page');
-    
-    // Terminal başlangıç animasyonu
-    terminal.style.opacity = '0';
-    terminal.style.transform = 'scale(0.95)';
-    
-    setTimeout(() => {
-        terminal.style.transition = 'all 0.5s ease';
-        terminal.style.opacity = '1';
-        terminal.style.transform = 'scale(1)';
-        
-        // Menü butonlarını sırayla göster
-        const buttons = menu.querySelectorAll('button');
-        buttons.forEach((button, index) => {
-            button.style.opacity = '0';
-            button.style.transform = 'translateY(20px)';
-            
-            setTimeout(() => {
-                button.style.transition = 'all 0.3s ease';
-                button.style.opacity = '1';
-                button.style.transform = 'translateY(0)';
-            }, 100 * index);
-        });
-    }, 500);
-}
-
-// Matrix benzeri arka plan efekti
-function createMatrixEffect() {
-    const canvas = document.createElement('canvas');
-    const ctx = canvas.getContext('2d');
-    const terminal = document.querySelector('.terminal');
-    
-    canvas.style.position = 'absolute';
-    canvas.style.top = '0';
-    canvas.style.left = '0';
-    canvas.style.width = '100%';
-    canvas.style.height = '100%';
-    canvas.style.opacity = '0.1';
-    canvas.style.pointerEvents = 'none';
-    canvas.style.zIndex = '0';
-    
-    terminal.appendChild(canvas);
-    
-    let width = canvas.width = terminal.offsetWidth;
-    let height = canvas.height = terminal.offsetHeight;
-    
-    const columns = Math.floor(width / 20);
-    const drops = new Array(columns).fill(1);
-    
-    function draw() {
-        ctx.fillStyle = 'rgba(0, 0, 0, 0.05)';
-        ctx.fillRect(0, 0, width, height);
-        
-        ctx.fillStyle = '#0F0';
-        ctx.font = '15px monospace';
-        
-        for (let i = 0; i < drops.length; i++) {
-            const text = String.fromCharCode(0x30A0 + Math.random() * 96);
-            ctx.fillText(text, i * 20, drops[i] * 20);
-            
-            if (drops[i] * 20 > height && Math.random() > 0.975) {
-                drops[i] = 0;
-            }
-            drops[i]++;
-        }
-    }
-    
-    setInterval(draw, 33);
-    
-    // Pencere yeniden boyutlandırıldığında canvas'ı güncelle
-    window.addEventListener('resize', () => {
-        width = canvas.width = terminal.offsetWidth;
-        height = canvas.height = terminal.offsetHeight;
-    });
-}
-
-// Sayfa geçiş animasyonları
+// Sayfa değiştirme fonksiyonu
 function showPage(pageId) {
+    // Önce tüm sayfaları gizle ve scroll pozisyonlarını sıfırla
     const pages = document.querySelectorAll('.page');
-    const targetPage = document.getElementById(pageId);
-    
-    pages.forEach(page => {
-        if (page === targetPage) {
-            page.style.display = 'block';
-            page.style.opacity = '0';
-            page.style.transform = 'translateY(20px)';
-            
-            setTimeout(() => {
-                page.style.transition = 'all 0.5s ease';
-                page.style.opacity = '1';
-                page.style.transform = 'translateY(0)';
-                page.classList.add('visible');
-            }, 50);
-        } else {
-            page.style.opacity = '0';
-            page.style.transform = 'translateY(-20px)';
-            setTimeout(() => {
-                page.style.display = 'none';
-                page.classList.remove('visible');
-            }, 300);
-        }
+    pages.forEach((page) => {
+        page.classList.add('hidden');
+        page.classList.remove('visible');
+        page.scrollTop = 0;
     });
-}
 
-// Proje kartları için hover efektleri
-function initializeProjectCards() {
-    const projects = document.querySelectorAll('.project');
-    
-    projects.forEach(project => {
-        project.addEventListener('mousemove', (e) => {
-            const rect = project.getBoundingClientRect();
-            const x = e.clientX - rect.left;
-            const y = e.clientY - rect.top;
-            
-            const centerX = rect.width / 2;
-            const centerY = rect.height / 2;
-            
-            const rotateX = (y - centerY) / 20;
-            const rotateY = (centerX - x) / 20;
-            
-            project.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) translateZ(10px)`;
-        });
+    // Terminal container'ını bul
+    const terminal = document.querySelector('.terminal');
+    if (terminal) {
+        // Terminal'in scroll pozisyonunu sıfırla
+        terminal.scrollTop = 0;
+    }
+
+    // Aktif sayfayı göster
+    const activePage = document.getElementById(pageId);
+    if (activePage) {
+        activePage.classList.remove('hidden');
+        activePage.classList.add('visible');
         
-        project.addEventListener('mouseleave', () => {
-            project.style.transform = 'perspective(1000px) rotateX(0) rotateY(0) translateZ(0)';
+        // Başlıkları güncelle
+        const title = activePage.querySelector('h1');
+        if (title) {
+            const newText = title.dataset[currentLanguage];
+            title.textContent = newText;
+        }
+
+        // Sayfanın scroll pozisyonunu sıfırla
+        activePage.scrollTop = 0;
+
+        // Sayfanın içindeki tüm scrollable elementlerin pozisyonunu sıfırla
+        const scrollableElements = activePage.querySelectorAll('.project-content, .project-description');
+        scrollableElements.forEach(element => {
+            element.scrollTop = 0;
         });
-    });
+    }
+
+    // Window scroll pozisyonunu sıfırla
+    window.scrollTo(0, 0);
 }
 
 // Terminal efekti için yazı animasyonu
@@ -628,21 +539,21 @@ function toggleLanguage() {
 
 // Sayfa yüklendiğinde
 window.onload = () => {
-    // Terminal başlangıç animasyonu
-    initializeTerminal();
-    
-    // Matrix efekti
-    createMatrixEffect();
-    
-    // Proje kartları için hover efektleri
-    initializeProjectCards();
-    
-    // Mevcut işlevleri çağır
+    // Önce dili ayarla
     changeLanguage('tr');
+    // Sonra sayfayı göster
     showPage('about');
+    
+    // About me ve deneyimleri yükle
     loadAboutInfo();
+    
+    // İletişim bilgilerini yükle
     loadContactInfo();
-    loadProjects();
+    
+    // Arka planda projeleri yüklemeye başla
+    const loadProjectsPromise = loadProjects();
+    
+    // Profil fotoğrafını yükle
     loadProfileImage();
     
     // Intersection Observer ile sayfa görünürlüğünü kontrol et
@@ -652,7 +563,7 @@ window.onload = () => {
                 const pageId = entry.target.id;
                 if (pageId === 'projects') {
                     // Projects sayfası görünür olduğunda, yükleme tamamlanmamışsa bekle
-                    loadProjects().then(() => {
+                    loadProjectsPromise.then(() => {
                         console.log('Projects page fully loaded');
                     });
                 }
