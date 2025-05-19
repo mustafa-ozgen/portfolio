@@ -13,6 +13,7 @@
     --card-bg: rgba(30, 41, 59, 0.8);
     --card-border: rgba(37, 99, 235, 0.2);
     --shadow-color: rgba(0, 0, 0, 0.3);
+    --profilname-color: #2563EB;
     
     /* Typography */
     --font-primary: 'Space Grotesk', sans-serif;
@@ -1033,8 +1034,8 @@ h1 {
 .profile-name {
     font-family: var(--font-primary);
     font-size: 1.2em;
-    color: var(--text-color);
-    opacity: 0.4;
+    color: var(--profilname-color);
+    opacity: 0.6;
     text-align: center;
     margin-top: 10px;
     letter-spacing: 1px;
