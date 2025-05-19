@@ -46,6 +46,7 @@ body {
 }
 
 .terminal {
+    position: relative;
     width: 95%;
     max-width: 1800px;
     height: calc(100vh - 32px);
@@ -55,12 +56,47 @@ body {
     background-color: var(--terminal-bg);
     box-shadow: 0 20px 40px var(--shadow-color);
     border-radius: var(--border-radius);
-    position: relative;
     display: flex;
     flex-direction: column;
     box-sizing: border-box;
     backdrop-filter: blur(10px);
     overflow: hidden;
+}
+
+.terminal::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: 
+        linear-gradient(90deg, transparent 0%, rgba(37, 99, 235, 0.1) 50%, transparent 100%),
+        repeating-linear-gradient(0deg, transparent 0px, transparent 1px, rgba(37, 99, 235, 0.1) 1px, rgba(37, 99, 235, 0.1) 2px);
+    pointer-events: none;
+    animation: scan 8s linear infinite;
+    z-index: 1;
+}
+
+.terminal::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: radial-gradient(circle at 50% 50%, transparent 0%, var(--terminal-bg) 100%);
+    pointer-events: none;
+    z-index: 2;
+}
+
+@keyframes scan {
+    0% {
+        background-position: 0 0;
+    }
+    100% {
+        background-position: 0 100%;
+    }
 }
 
 .language-selector {
@@ -99,15 +135,18 @@ body {
 }
 
 .menu {
+    position: relative;
     margin-bottom: 24px;
     display: flex;
     flex-wrap: wrap;
     gap: 12px;
     justify-content: center;
     align-items: center;
+    z-index: 3;
 }
 
-button {
+.menu button {
+    position: relative;
     background: var(--card-bg);
     border: 1px solid var(--card-border);
     color: var(--text-color);
@@ -117,15 +156,16 @@ button {
     cursor: pointer;
     padding: 10px 20px;
     transition: all 0.3s ease;
-    position: relative;
     overflow: hidden;
     white-space: nowrap;
     border-radius: var(--border-radius);
     letter-spacing: 0.02em;
     box-shadow: 0 4px 12px var(--shadow-color);
+    transform-style: preserve-3d;
+    perspective: 1000px;
 }
 
-button::before {
+.menu button::before {
     content: '';
     position: absolute;
     top: 0;
@@ -135,24 +175,25 @@ button::before {
     background: linear-gradient(
         90deg,
         transparent,
-        rgba(255, 255, 255, 0.4),
+        rgba(255, 255, 255, 0.2),
         transparent
     );
-    transition: 0.3s;
+    transition: 0.5s;
 }
 
-button:hover::before {
-    left: 100%;
-}
-
-button:hover {
+.menu button:hover {
+    transform: translateY(-2px) rotateX(10deg);
     background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
     color: white;
-    transform: translateY(-2px);
     box-shadow: 0 8px 20px var(--glow-color);
 }
 
+.menu button:hover::before {
+    left: 100%;
+}
+
 .page {
+    position: relative;
     display: none;
     animation: fadeIn 0.5s ease;
     flex: 1;
@@ -162,6 +203,23 @@ button:hover {
     box-sizing: border-box;
     max-width: 1200px;
     margin: 0 auto;
+    z-index: 3;
+}
+
+.page.visible {
+    display: block;
+    animation: pageTransition 0.5s ease;
+}
+
+@keyframes pageTransition {
+    0% {
+        opacity: 0;
+        transform: translateY(20px) scale(0.98);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
 }
 
 .page::-webkit-scrollbar {
@@ -181,15 +239,6 @@ button:hover {
     background: var(--secondary-color);
 }
 
-.page.visible {
-    display: block;
-}
-
-@keyframes fadeIn {
-    from { opacity: 0; transform: translateY(10px); }
-    to { opacity: 1; transform: translateY(0); }
-}
-
 h1, h2, h3, h4, h5, h6 {
     font-family: var(--font-primary);
     font-weight: 600;
@@ -198,11 +247,13 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 h1 {
+    position: relative;
     font-size: clamp(28px, 4vw, 42px);
     margin-bottom: var(--spacing-lg);
     background: linear-gradient(135deg, var(--primary-color), var(--accent-color));
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
+    animation: glitch 5s infinite;
 }
 
 .hidden {
@@ -210,18 +261,39 @@ h1 {
 }
 
 .project {
+    position: relative;
     margin-bottom: 24px;
     padding: 20px;
     border: 1px solid var(--card-border);
     border-radius: var(--border-radius);
     background: var(--card-bg);
     box-shadow: 0 8px 24px var(--shadow-color);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    transition: all 0.3s ease;
+    transform-style: preserve-3d;
+    perspective: 1000px;
 }
 
 .project:hover {
-    transform: translateY(-4px);
+    transform: translateY(-4px) rotateX(5deg);
     box-shadow: 0 12px 32px var(--glow-color);
+}
+
+.project::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(135deg, transparent 0%, rgba(37, 99, 235, 0.1) 100%);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    border-radius: var(--border-radius);
+    pointer-events: none;
+}
+
+.project:hover::before {
+    opacity: 1;
 }
 
 .project h2 {
@@ -1038,4 +1110,26 @@ h1 {
     text-align: center;
     margin-top: 10px;
     letter-spacing: 1px;
+}
+
+/* Glitch Efekti */
+@keyframes glitch {
+    0% {
+        transform: translate(0);
+    }
+    20% {
+        transform: translate(-2px, 2px);
+    }
+    40% {
+        transform: translate(-2px, -2px);
+    }
+    60% {
+        transform: translate(2px, 2px);
+    }
+    80% {
+        transform: translate(2px, -2px);
+    }
+    100% {
+        transform: translate(0);
+    }
 }
