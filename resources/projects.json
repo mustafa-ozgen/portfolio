@@ -210,6 +210,24 @@
             },
             "media": ["1.gif", "2.webp", "3.mp4"],
             "link": "https://youtu.be/gF7Cg6mt__Y"
+        },
+        {
+            "category": "digital",
+            "folder": "autoasset-3d",
+            "title": {
+                "en": "AutoAsset3D",
+                "tr": "AutoAsset3D"
+            },
+            "subtitle": {
+                "en": "AI-Powered 2D to 3D Asset Pipeline",
+                "tr": "Yapay Zeka Destekli 2D'den 3D'ye Varlık Dönüşümü"
+            },
+            "description": {
+                "en": "AutoAsset3D is an innovative pipeline that transforms 2D objects into game-ready 3D assets using artificial intelligence and various specialized tools. The system processes input images through a carefully designed workflow, producing optimized low-poly 3D models with texture optimization, making them immediately usable across all major game engines. This automated solution significantly reduces the time and technical expertise required for 3D asset creation.\n\nSoftware and applications used:\n• Trellis AI (AI-powered image processing)\n• Meshlab (3D mesh optimization)\n• Cinema 4D (3D modeling and refinement)\n• Substance Painter (Texture optimization)\n• Unity (Final asset testing and validation)",
+                "tr": "AutoAsset3D, yapay zeka ve çeşitli özel araçlar kullanarak 2D objeleri oyuna hazır 3D varlıklara dönüştüren yenilikçi bir pipeline'dır. Sistem, giriş görüntülerini özenle tasarlanmış bir iş akışı üzerinden işleyerek, doku optimizasyonu yapılmış low-poly 3D modeller üretir ve bunları tüm büyük oyun motorlarında kullanıma hazır hale getirir. Bu otomatik çözüm, 3D varlık oluşturma için gereken süreyi ve teknik uzmanlığı önemli ölçüde azaltır.\n\nKullanılan yazılım ve uygulamalar:\n• Trellis AI (Yapay zeka destekli görüntü işleme)\n• Meshlab (3D mesh optimizasyonu)\n• Cinema 4D (3D modelleme ve iyileştirme)\n• Substance Painter (Doku optimizasyonu)\n• Unity (Final varlık testi ve doğrulama)"
+            },
+            "media": ["1.gif", "2.webp", "3.mp4"],
+            "link": ""
         }
     ]
 }
