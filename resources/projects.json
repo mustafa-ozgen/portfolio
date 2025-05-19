@@ -254,6 +254,24 @@
             },
             "media": ["1.gif", "2.webp", "3.mp4"],
             "link": ""
+        },
+        {
+            "category": "3d-pipeline",
+            "folder": "fnss-tank",
+            "title": {
+                "en": "FNSS Tank Reference Modeling & Texturing",
+                "tr": "FNSS Tank Referans Modelleme & Texturing"
+            },
+            "subtitle": {
+                "en": "Defense Industry Digital Asset Pipeline",
+                "tr": "Savunma Sanayi Dijital Varlık Pipeline'ı"
+            },
+            "description": {
+                "en": "This project demonstrates a comprehensive digital asset pipeline for defense industry applications, focusing on the creation of a high-fidelity tank model for FNSS. The workflow encompasses detailed reference-based modeling, advanced PBR texturing workflows, and mechanical system implementation. The model features multiple camouflage patterns and fully functional mechanical components, optimized for both real-time game engines and high-quality rendering pipelines. The project showcases expertise in technical asset creation, UV optimization, and material authoring for defense industry applications.\n\nSoftware and applications used:\n• Cinema 4D (High-poly modeling, mechanical rigging, and UV optimization)\n• Substance Painter (PBR material workflows and texture authoring)\n• Marmoset Toolbag (Real-time preview and material validation)\n• Materialize (Texture processing and optimization)\n• Unity Engine (Technical implementation and performance testing)",
+                "tr": "Bu proje, FNSS için yüksek kaliteli tank modeli oluşturmaya odaklanan kapsamlı bir savunma sanayi dijital varlık pipeline'ını gösteriyor. İş akışı, detaylı referans tabanlı modelleme, gelişmiş PBR texturing süreçleri ve mekanik sistem implementasyonunu içeriyor. Model, çoklu kamuflaj desenleri ve tam fonksiyonel mekanik bileşenler içeriyor, hem gerçek zamanlı oyun motorları hem de yüksek kaliteli render pipeline'ları için optimize edilmiş durumda. Proje, savunma sanayi uygulamaları için teknik varlık oluşturma, UV optimizasyonu ve materyal üretimi konularındaki uzmanlığı gösteriyor.\n\nKullanılan yazılım ve uygulamalar:\n• Cinema 4D (Yüksek detaylı modelleme, mekanik rigging ve UV optimizasyonu)\n• Substance Painter (PBR materyal iş akışları ve doku üretimi)\n• Marmoset Toolbag (Gerçek zamanlı önizleme ve materyal doğrulama)\n• Materialize (Doku işleme ve optimizasyonu)\n• Unity Engine (Teknik implementasyon ve performans testi)"
+            },
+            "media": ["1.gif", "2.webp", "3.mp4"],
+            "link": ""
         }
     ]
 }
