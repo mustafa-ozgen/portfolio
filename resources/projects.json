@@ -5,16 +5,24 @@
             "tr": "Müze Kurulumları"
         },
         "interactive": {
-            "en": "Interactive Experiences",
-            "tr": "Etkileşimli Deneyimler"
+            "en": "Interactive Installations",
+            "tr": "Etkileşimli Kurulumlar"
         },
-        "digital": {
-            "en": "Digital Projects",
-            "tr": "Dijital Projeler"
+        "digital-art": {
+            "en": "Digital Art & Animation",
+            "tr": "Dijital Sanat & Animasyon"
         },
         "game": {
             "en": "Game Development",
             "tr": "Oyun Geliştirme"
+        },
+        "3d-pipeline": {
+            "en": "3D Pipeline & Tools",
+            "tr": "3D Pipeline & Araçlar"
+        },
+        "virtual-reality": {
+            "en": "Virtual & Augmented Reality",
+            "tr": "Sanal & Artırılmış Gerçeklik"
         }
     },
     "projects": [
@@ -123,7 +131,7 @@
             "media": ["1.gif", "2.webp", "3.mp4"],
             "link": "https://eca.unwomen.org/en/news/stories/2019/11/un-women-urges-to-light-the-dark"
         },        {
-            "category": "interactive",
+            "category": "virtual-reality",
             "folder": "artvision-vr",
             "title": {
                 "en": "Artvision VR",
@@ -140,7 +148,7 @@
             "media": ["1.gif", "2.webp", "3.mp4"],
             "link": ""
         },         {
-            "category": "digital",
+            "category": "digital-art",
             "folder": "hybrid-reality",
             "title": {
               "en": "Hybrid Reality",
@@ -158,7 +166,7 @@
             "link": "https://youtu.be/8Hd67fySYJI"
           },
           {
-            "category": "digital",
+            "category": "digital-art",
             "folder": "pixar-intro",
             "title": {
                 "en": "Pixar Intro",
@@ -176,7 +184,7 @@
             "link": ""
         },
         {
-            "category": "digital",
+            "category": "digital-art",
             "folder": "dance-showreel",
             "title": {
                 "en": "Dance Showreel",
@@ -194,7 +202,7 @@
             "link": "https://youtu.be/HqiBT2eZFhE"
         },
         {
-            "category": "digital",
+            "category": "digital-art",
             "folder": "motioncaoture-toart",
             "title": {
                 "en": "Motion Capture to Art",
@@ -212,7 +220,7 @@
             "link": "https://youtu.be/gF7Cg6mt__Y"
         },
         {
-            "category": "digital",
+            "category": "3d-pipeline",
             "folder": "autoasset-3d",
             "title": {
                 "en": "AutoAsset3D",
