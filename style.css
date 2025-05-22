@@ -1030,13 +1030,3 @@ h1 {
     color: white;
     transform: translateX(3px);
 }
-
-.profile-name {
-    font-family: var(--font-primary);
-    font-size: 1.2em;
-    color: var(--profilname-color);
-    opacity: 0.6;
-    text-align: center;
-    margin-top: 10px;
-    letter-spacing: 1px;
-}
