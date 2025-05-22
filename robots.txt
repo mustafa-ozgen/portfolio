@@ -1,4 +1,8 @@
 User-agent: *
 Allow: /
+Disallow: /private/
+Disallow: /temp/
+
+# Crawl-delay: 10
 
 Sitemap: https://mustafa-ozgen.github.io/portfolio/sitemap.xml 
