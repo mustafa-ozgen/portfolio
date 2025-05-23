@@ -272,6 +272,24 @@
             },
             "media": ["1.gif", "2.webp", "3.mp4"],
             "link": ""
+        },
+        {
+            "category": "game",
+            "folder": "hyper-drive",
+            "title": {
+                "en": "Hyper Drive",
+                "tr": "Hyper Drive"
+            },
+            "subtitle": {
+                "en": "Arcade Vehicle Sports Game",
+                "tr": "Arcade Araç Spor Oyunu"
+            },
+            "description": {
+                "en": "Hyper Drive, which I developed, is a test project of an arcade-style vehicle sports game inspired by Rocket League, featuring fast-paced matches where players control futuristic vehicles to score goals. The game combines arcade-style driving physics with strategic ball control mechanics, where vehicles can manipulate a special ball. Players compete in a futuristic arena with two goal pipes, engaging in impactful vehicle-to-vehicle collisions. The project emphasizes technical excellence through its sophisticated visual effects system, realistic collision response, and AI-generated voice lines that enhance the futuristic atmosphere. The universal input system supports both joystick and keyboard controls, making it accessible for both single and multiplayer modes.\n\nSoftware and applications used:\n• Unity Engine (Arcade physics, networking, and visual effects)\n• Cinema 4D (3D modeling and environment design)\n• Substance Painter (PBR material creation)\n• ElevenLabs.io (AI voice generation)\n• Envato Elements (Background music)",
+                "tr": "Geliştirmiş olduğum Hyper Drive, Rocket League'dan ilham alan, oyuncuların fütüristik araçları kontrol ederek gol atmaya çalıştığı, hızlı tempolu maçlar sunan bir arcade tarzı araç spor oyunu test projesidir. Oyun, arcade tarzı sürüş fiziğini stratejik top kontrol mekanikleriyle birleştirir ve araçların özel bir topu manipüle edebildiği bir sistem sunar. Oyuncular, iki gol borusu bulunan fütüristik bir arenada, etkileyici bir his ile araçtan araca çarpışmalar gerçekleştirir. Proje, sofistike görsel efekt sistemi, gerçekçi çarpışma tepkisi ve fütüristik atmosferi güçlendiren yapay zeka ile üretilmiş seslendirmeler aracılığıyla teknik mükemmelliği vurgular. Evrensel giriş sistemi, hem joystick hem de klavye kontrolünü destekleyerek, hem tek oyunculu hem de çok oyunculu modlar için erişilebilir bir deneyim sunar.\n\nKullanılan yazılım ve uygulamalar:\n• Unity Engine (Arcade fiziği, ağ yapısı ve görsel efektler)\n• Cinema 4D (3D modelleme ve çevre tasarımı)\n• Substance Painter (PBR materyal oluşturma)\n• ElevenLabs.io (Yapay zeka ses üretimi)\n• Envato Elements (Arkaplan müziği)"
+            },
+            "media": ["1.gif", "2.webp", "3.mp4"],
+            "link": ""
         }
     ]
 }
