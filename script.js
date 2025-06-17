@@ -497,8 +497,8 @@ function changeLanguage(lang) {
     
     currentLanguage = lang;
     
-    // Dil butonunu güncelle
-    document.querySelector('.current-lang').textContent = lang.toUpperCase();
+    // Dil butonunu güncelle - alternatifi göster
+    document.querySelector('.current-lang').textContent = lang === 'en' ? 'TR' : 'EN';
     
     // HTML lang attribute'unu güncelle
     document.documentElement.lang = lang;
