@@ -1,12 +1,12 @@
 {
     "categories": {
         "museum": {
-            "en": "Museum Installations",
-            "tr": "Müze Kurulumları"
+            "en": "Museum Applications",
+            "tr": "Müze Uygulamaları"
         },
         "interactive": {
-            "en": "Interactive Installations",
-            "tr": "Etkileşimli Kurulumlar"
+            "en": "Interactive Applications",
+            "tr": "Etkileşimli Uygulamalar"
         },
         "digital-art": {
             "en": "Digital Art & Animation",
