@@ -520,7 +520,7 @@ h1 {
 }
 
 .profile-container {
-    display: flex;
+    display: none;
     flex-direction: column;
     align-items: center;
     margin-bottom: 20px;
