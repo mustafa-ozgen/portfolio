@@ -2,125 +2,143 @@
     "about": {
         "tr": {
             "description": "Teknik sanatçı ve yazılım geliştirici olarak, gömülü sistemler, gerçek zamanlı 3D görselleştirme ve interaktif medya alanlarında uzmanlaşmış bir yaklaşım sunuyorum. Unity ve Unreal Engine ekosistemlerinde teknik sanatçı olarak edindiğim deneyimler, projelerin hem görsel kalitesini hem de teknik performansını optimize etmeme olanak sağlıyor.<br /><br />Çalışma alanlarım:<br />• Gerçek zamanlı 3D görselleştirme ve interaktif içerik üretimi<br />• Oyun motorları (Unity, Unreal Engine) üzerinde teknik sanatçılık<br />• Shader geliştirme ve materyal sistemleri optimizasyonu<br />• VFX & animasyon sistemleri tasarımı ve implementasyonu<br />• Gömülü sistemler ve mikrodenetleyici tabanlı donanım entegrasyonu<br />• Performans odaklı asset pipeline yönetimi<br /><br />Teknik yaklaşımım, sistemlerin birbiriyle uyumlu ve verimli çalışmasını sağlamak üzerine kurulu. Her projede, görsel kalite ile teknik performans arasında optimal dengeyi yakalayarak, sürdürülebilir ve ölçeklenebilir çözümler geliştiriyorum. Özellikle gömülü sistemlerin oyun motorlarıyla entegrasyonu konusunda, özel yazılım altyapıları tasarlayarak donanım-yazılım senkronizasyonunu sağlıyorum.<br /><br />Portfolyomda yer alan projeler, bu disiplinler arası yaklaşımın somut örneklerini sunuyor. Her bir projede, teknik uzmanlığımı yaratıcı çözümlerle birleştirerek, kullanıcı deneyimini ön planda tutan yenilikçi uygulamalar geliştiriyorum.",
-            "experience": [
-                {
-                    "company": "RestPlay",
-                    "title": "Motion Graphic Artist & Senior 3D Generalist",
-                    "period": "Ekim 2022 – Halen",
-                    "startDate": "2022-10-01",
-                    "responsibilities": [
-                        "3D realistik ve stilize görselleştirme",
-                        "2D animasyon ve asset üretimi",
-                        "Unity Engine tabanlı projelerde teknik sanatçılık",
-                        "Shader geliştirme ve materyal sistemleri optimizasyonu",
-                        "VFX & animasyon sistemleri tasarımı ve implementasyonu",
-                        "Performans odaklı asset pipeline yönetimi"
-                    ]
-                },
-                {
-                    "company": "Reo-Tek",
-                    "title": "Senior 3D Artist / Unity Technical Artist",
-                    "period": "Ocak 2022 – Ekim 2022",
-                    "responsibilities": [
-                        "Gerçek zamanlı 3D içerik üretimi ve Unity entegrasyonu",
-                        "Teknik sanatçılık ve asset pipeline yönetimi",
-                        "Gömülü sistemler ve mikrodenetleyici tabanlı donanım entegrasyonu",
-                        "Özel yazılım altyapıları tasarımı ve implementasyonu"
-                    ]
-                },
-                {
-                    "company": "RoofStacks",
-                    "title": "Senior 3D Generalist",
-                    "period": "Aralık 2021 – Ocak 2022",
-                    "responsibilities": [
-                        "3D varlık üretimi ve görselleştirme",
-                        "Oyun odaklı içerik geliştirme",
-                        "Asset optimizasyonu ve performans iyileştirmeleri"
-                    ]
-                },
-                {
-                    "company": "GoArt Worlds",
-                    "title": "Senior 3D Generalist",
-                    "period": "Aralık 2021 – Ocak 2022",
-                    "responsibilities": [
-                        "Gerçek zamanlı dijital dünya üretimi",
-                        "3D genel içerik geliştirme süreçleri",
-                        "Performans odaklı asset yönetimi"
-                    ]
-                },
-                {
-                    "company": "Reo-Tek",
-                    "title": "3D Artist, Embedded Software Developer, Elektrik-Elektronik Teknikeri",
-                    "period": "Temmuz 2019 – Aralık 2021",
-                    "responsibilities": [
-                        "3D modelleme ve görselleştirme",
-                        "Gömülü sistem yazılımları geliştirme",
-                        "Elektronik donanım tasarımı ve implementasyonu",
-                        "Donanım-yazılım entegrasyonu ve optimizasyonu"
-                    ]
-                }
-            ]
+          "experience": [
+            {
+              "company": "RigidPoly Fab",
+              "title": "Founder and Creative Director",
+              "period": "Mayıs 2024 – Halen",
+              "startDate": "2024-05-01",
+              "responsibilities": [
+               "RigidPoly Fab’in kurucusu ve yaratıcı direktörü — tasarım, 3D sanat ve kod aracılığıyla dijital deneyimler üreten bağımsız bir stüdyo.\nOyunlar, etkileşimli görseller ve yaratıcı araçlar geliştiriyorum; multidisipliner bir yaklaşımla çalışıyorum."
+              ]
+            },
+            {
+              "company": "RestPlay",
+              "title": "Motion Graphic Artist & Senior 3D Generalist",
+              "period": "Ekim 2022 – Halen",
+              "startDate": "2022-10-01",
+              "responsibilities": [
+                "3D realistik ve stilize görselleştirme",
+                "2D animasyon ve asset üretimi",
+                "Unity Engine tabanlı projelerde teknik sanatçılık",
+                "Shader geliştirme ve materyal sistemleri optimizasyonu",
+                "VFX & animasyon sistemleri tasarımı ve implementasyonu",
+                "Performans odaklı asset pipeline yönetimi"
+              ]
+            },
+            {
+              "company": "Reo-Tek",
+              "title": "Senior 3D Artist / Unity Technical Artist",
+              "period": "Ocak 2022 – Ekim 2022",
+              "responsibilities": [
+                "Gerçek zamanlı 3D içerik üretimi ve Unity entegrasyonu",
+                "Teknik sanatçılık ve asset pipeline yönetimi",
+                "Gömülü sistemler ve mikrodenetleyici tabanlı donanım entegrasyonu",
+                "Özel yazılım altyapıları tasarımı ve implementasyonu"
+              ]
+            },
+            {
+              "company": "RoofStacks",
+              "title": "Senior 3D Generalist",
+              "period": "Aralık 2021 – Ocak 2022",
+              "responsibilities": [
+                "3D varlık üretimi ve görselleştirme",
+                "Oyun odaklı içerik geliştirme",
+                "Asset optimizasyonu ve performans iyileştirmeleri"
+              ]
+            },
+            {
+              "company": "GoArt Worlds",
+              "title": "Senior 3D Generalist",
+              "period": "Aralık 2021 – Ocak 2022",
+              "responsibilities": [
+                "Gerçek zamanlı dijital dünya üretimi",
+                "3D genel içerik geliştirme süreçleri",
+                "Performans odaklı asset yönetimi"
+              ]
+            },
+            {
+              "company": "Reo-Tek",
+              "title": "3D Artist, Embedded Software Developer, Elektrik-Elektronik Teknikeri",
+              "period": "Temmuz 2019 – Aralık 2021",
+              "responsibilities": [
+                "3D modelleme ve görselleştirme",
+                "Gömülü sistem yazılımları geliştirme",
+                "Elektronik donanım tasarımı ve implementasyonu",
+                "Donanım-yazılım entegrasyonu ve optimizasyonu"
+              ]
+            }
+          ]
         },
         "en": {
             "description": "As a technical artist and software developer, I offer specialized expertise in embedded systems, real-time 3D visualization, and interactive media. My experience as a technical artist in Unity and Unreal Engine ecosystems enables me to optimize both visual quality and technical performance of projects.<br /><br />Areas of expertise:<br />• Real-time 3D visualization and interactive content development<br />• Technical art for game engines (Unity, Unreal Engine)<br />• Shader development and material systems optimization<br />• VFX & animation systems design and implementation<br />• Embedded systems and microcontroller-based hardware integration<br />• Performance-focused asset pipeline management<br /><br />My technical approach is built on ensuring harmonious and efficient system integration. In each project, I develop sustainable and scalable solutions by striking an optimal balance between visual quality and technical performance. Particularly in integrating embedded systems with game engines, I design custom software infrastructure to ensure hardware-software synchronization.<br /><br />The projects in my portfolio exemplify this interdisciplinary approach. In each project, I combine my technical expertise with creative solutions to develop innovative applications that prioritize user experience.",
-            "experience": [
-                {
-                    "company": "RestPlay",
-                    "title": "Motion Graphic Artist & Senior 3D Generalist",
-                    "period": "October 2022 – Present",
-                    "startDate": "2022-10-01",
-                    "responsibilities": [
-                        "3D realistic and stylized visualization",
-                        "2D animation and asset production",
-                        "Technical artistry for Unity Engine projects",
-                        "Shader development and material systems optimization",
-                        "VFX & animation systems design and implementation",
-                        "Performance-focused asset pipeline management"
-                    ]
-                },
-                {
-                    "company": "Reo-Tek",
-                    "title": "Senior 3D Artist / Unity Technical Artist",
-                    "period": "January 2022 – October 2022",
-                    "responsibilities": [
-                        "Real-time 3D content production and Unity integration",
-                        "Technical artistry and asset pipeline management",
-                        "Embedded systems and microcontroller-based hardware integration",
-                        "Custom software infrastructure design and implementation"
-                    ]
-                },
-                {
-                    "company": "RoofStacks",
-                    "title": "Senior 3D Generalist",
-                    "period": "December 2021 – January 2022",
-                    "responsibilities": [
-                        "3D asset creation and visualization",
-                        "Game-oriented content development",
-                        "Asset optimization and performance improvements"
-                    ]
-                },
-                {
-                    "company": "GoArt Worlds",
-                    "title": "Senior 3D Generalist",
-                    "period": "December 2021 – January 2022",
-                    "responsibilities": [
-                        "Real-time digital world production",
-                        "General 3D content development processes",
-                        "Performance-focused asset management"
-                    ]
-                },
-                {
-                    "company": "Reo-Tek",
-                    "title": "3D Artist, Embedded Software Developer, Electrical & Electronics Technician",
-                    "period": "July 2019 – December 2021",
-                    "responsibilities": [
-                        "3D modeling and visualization",
-                        "Embedded systems software development",
-                        "Electronic hardware design and implementation",
-                        "Hardware-software integration and optimization"
-                    ]
-                }
-            ]
+          "experience": [
+            {
+              "company": "RigidPoly Fab",
+              "title": "Founder and Creative Director",
+              "period": "May 2024 – Present",
+              "startDate": "2024-05-01",
+              "responsibilities": [
+                "Founder and Creative Director of RigidPoly Fab — an independent studio focused on crafting digital experiences through design, 3D art, and code.\nBuilding games, interactive visuals, and creative tools with a multidisciplinary mindset."
+              ]
+            },
+            {
+              "company": "RestPlay",
+              "title": "Motion Graphic Artist & Senior 3D Generalist",
+              "period": "October 2022 – Present",
+              "startDate": "2022-10-01",
+              "responsibilities": [
+                "3D realistic and stylized visualization",
+                "2D animation and asset production",
+                "Technical artistry for Unity Engine projects",
+                "Shader development and material systems optimization",
+                "VFX & animation systems design and implementation",
+                "Performance-focused asset pipeline management"
+              ]
+            },
+            {
+              "company": "Reo-Tek",
+              "title": "Senior 3D Artist / Unity Technical Artist",
+              "period": "January 2022 – October 2022",
+              "responsibilities": [
+                "Real-time 3D content production and Unity integration",
+                "Technical artistry and asset pipeline management",
+                "Embedded systems and microcontroller-based hardware integration",
+                "Custom software infrastructure design and implementation"
+              ]
+            },
+            {
+              "company": "RoofStacks",
+              "title": "Senior 3D Generalist",
+              "period": "December 2021 – January 2022",
+              "responsibilities": [
+                "3D asset creation and visualization",
+                "Game-oriented content development",
+                "Asset optimization and performance improvements"
+              ]
+            },
+            {
+              "company": "GoArt Worlds",
+              "title": "Senior 3D Generalist",
+              "period": "December 2021 – January 2022",
+              "responsibilities": [
+                "Real-time digital world production",
+                "General 3D content development processes",
+                "Performance-focused asset management"
+              ]
+            },
+            {
+              "company": "Reo-Tek",
+              "title": "3D Artist, Embedded Software Developer, Electrical & Electronics Technician",
+              "period": "July 2019 – December 2021",
+              "responsibilities": [
+                "3D modeling and visualization",
+                "Embedded systems software development",
+                "Electronic hardware design and implementation",
+                "Hardware-software integration and optimization"
+              ]
+            }
+          ]
         }
     },
     "contact": {
