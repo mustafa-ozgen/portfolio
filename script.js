@@ -540,7 +540,7 @@ function toggleLanguage() {
 // Sayfa yüklendiğinde
 window.onload = () => {
     // Önce dili ayarla
-    changeLanguage('tr');
+    changeLanguage('en');
     // Sonra sayfayı göster
     showPage('about');
     
