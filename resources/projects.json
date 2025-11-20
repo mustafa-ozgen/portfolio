@@ -290,6 +290,24 @@
             },
             "media": ["1.gif", "2.webp", "3.mp4"],
             "link": "https://youtu.be/7pBXQeXOM4M"
+        },
+        {
+            "category": "game",
+            "folder": "marbleodyssey-sandbox",
+            "title": {
+                "en": "Marble Odyssey: Sandbox",
+                "tr": "Marble Odyssey: Sandbox"
+            },
+            "subtitle": {
+                "en": "Sandbox Game",
+                "tr": "Sandbox Oyunu"
+            },
+            "description": {
+                "en": "Marble Odyssey: Sandbox is a mesmerizing marble simulator game set in a stunning space nebula environment. Build intricate marble runs on a beautiful grid-based wooden table with 6 different color themes. Place over 50 different cubic platforms including paths, holes, ramps, and solid blocks. Use 5 unique mechanical blocks to create automated marble systems - timed marble generators, elevators, pushers, and speed boosters. Watch thousands of marbles flow through your custom tracks, create mesmerizing loops, or collect them to release in spectacular cascades. Choose from 90 marble variants: 30 normal marbles, 30 glass marbles, and 30 metallic marbles, all with customizable color themes. Experience complete creative freedom with free-look camera controls as you design the perfect marble playground. The game delivers an exceptional audiovisual experience with realistic physics simulation and immersive sound design. Every detail is meticulously crafted - from the friction sounds of marbles rolling to the precise click intensity when they collide, everything is simulated accurately. The physics engine ensures authentic marble behavior, creating a true feast for both the eyes and ears.",
+                "tr": "Marble Odyssey: Sandbox, etkileyici bir uzay nebulası ortamında geçen büyüleyici bir misket simülatör oyunudur. 6 farklı renk temasına sahip güzel bir grid tabanlı ahşap masa üzerinde karmaşık misket parkurları inşa edin. Yollar, delikler, rampalar ve solid bloklar dahil 50'den fazla farklı kübik platform yerleştirin. Otomatik misket sistemleri oluşturmak için 5 benzersiz mekanik blok kullanın - zaman ayarlı misket üreticileri, asansörler, iticiler ve hızlandırıcılar. Binlerce misketin özel parkurlarınızdan akışını izleyin, büyüleyici looplar oluşturun veya onları biriktirip muhteşem şelaleler halinde dökün. 90 misket çeşidinden seçim yapın: 30 normal misket, 30 cam misket ve 30 metalik misket, hepsi özelleştirilebilir renk temalarına sahip. Mükemmel misket oyun alanınızı tasarlarken serbest kamera kontrolleri ile tam yaratıcı özgürlüğü yaşayın. Oyun, gerçekçi fizik simülasyonu ve etkileyici ses tasarımı ile olağanüstü bir görsel-işitsel deneyim sunuyor. Her detay titizlikle işlenmiş - misketlerin yuvarlanırken çıkardığı sürtünme seslerinden birbirine çarptıklarında çıkardıkları tik sesinin şiddetine kadar her şey simüle ediliyor. Fizik motoru, otantik misket davranışını garanti ederek hem görsel hem de işitsel olarak gerçek bir şölen yaşatıyor."
+            },
+            "media": ["1.gif", "2.gif", "3.mp4"],
+            "link": "https://store.steampowered.com/app/4182560/Marble_Odyssey_Sandbox/"
         }
     ]
 }
