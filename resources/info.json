@@ -158,22 +158,22 @@
                 {
                     "name": "LinkedIn",
                     "url": "https://www.linkedin.com/in/mustafa-ozgen/",
-                    "icon": "fab fa-linkedin"
+                    "icon": "linkedin"
                 },
                 {
                     "name": "Sketchfab",
                     "url": "https://sketchfab.com/mustafaozgen",
-                    "icon": "fas fa-cube"
+                    "icon": "sketchfab"
                 },
                 {
                     "name": "ArtStation",
                     "url": "https://mustafaozgen.artstation.com/",
-                    "icon": "fas fa-palette"
+                    "icon": "artstation"
                 },
                 {
                     "name": "YouTube",
                     "url": "https://www.youtube.com/c/MustafaÖzgen",
-                    "icon": "fab fa-youtube"
+                    "icon": "youtube"
                 }
             ]
         }

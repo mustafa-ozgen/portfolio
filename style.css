@@ -1,4 +1,7 @@
-@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap');
+/*
+ * Google Fonts artık index.html <head> içinde <link rel="stylesheet"> ile yükleniyor.
+ * (@import render-blocking olduğu ve font indirmeyi seri hale getirdiği için kaldırıldı.)
+ */
 
 :root {
     /* Modern renk paleti */
@@ -27,6 +30,16 @@
     --spacing-md: 12px;
     --spacing-lg: 16px;
     --spacing-xl: 32px;
+}
+
+/* Inline SVG ikonları için temel stil (Font Awesome yerine) */
+.icon {
+    width: 1em;
+    height: 1em;
+    display: inline-block;
+    vertical-align: -0.125em;
+    fill: currentColor;
+    flex-shrink: 0;
 }
 
 body {
@@ -95,8 +108,9 @@ body {
     box-shadow: 0 6px 16px var(--glow-color);
 }
 
-.lang-btn i {
-    font-size: 14px;
+.lang-btn .icon {
+    width: 14px;
+    height: 14px;
 }
 
 .menu {
@@ -242,6 +256,7 @@ h1 {
     color: var(--text-light);
     line-height: 1.6;
     font-size: 1em;
+    white-space: pre-line; /* JSON içindeki \n satır sonlarını korur */
     max-height: 0;
     overflow: hidden;
     transition: all 0.3s ease-out;
@@ -339,8 +354,8 @@ h1 {
     background: #000;
 }
 
-/* GIF'ler için özel stil */
-.project-media:has(img[src$="1.gif"]) img {
+/* GIF'ler için özel stil (eski :has() yerine sınıf tabanlı) */
+.project-media.media-gif img {
     height: calc(100% - 30px); /* Üstten ve alttan 12.5px'lik alanı kaldır */
     margin: 15px 0; /* Üstten ve alttan 12.5px boşluk */
     object-fit: fill; /* GIF'in tam olarak doldurmasını sağla */
@@ -486,8 +501,9 @@ h1 {
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
 }
 
-.play-button i {
-    font-size: 20px;
+.play-button .icon {
+    width: 20px;
+    height: 20px;
     transition: transform 0.2s ease;
 }
 
@@ -498,7 +514,7 @@ h1 {
     box-shadow: 0 6px 16px rgba(99, 102, 241, 0.2);
 }
 
-.play-button:hover i {
+.play-button:hover .icon {
     transform: scale(1.1);
 }
 
@@ -576,14 +592,7 @@ h1 {
     min-width: 300px;
 }
 
-/* About Content Styles */
-.about-content {
-    display: grid;
-    grid-template-columns: 280px 1fr;
-    gap: 32px;
-    align-items: start;
-}
-
+/* About Text Styles */
 .about-text {
     flex: 1;
 }
@@ -684,9 +693,10 @@ h1 {
     transition: all 0.3s ease;
 }
 
-.project-link i {
+.project-link .icon {
     color: var(--primary-color);
-    font-size: 1.1em;
+    width: 1.1em;
+    height: 1.1em;
     transition: transform 0.3s ease;
 }
 
@@ -702,7 +712,7 @@ h1 {
     box-shadow: 0 5px 15px var(--shadow-color);
 }
 
-.project-link:hover i {
+.project-link:hover .icon {
     color: white;
     transform: translateX(3px);
 }
@@ -759,10 +769,11 @@ h1 {
     box-shadow: 0 5px 15px var(--shadow-color);
 }
 
-.contact-item i {
+.contact-item .icon {
     color: var(--primary-color);
     margin-right: 15px;
-    font-size: 1.2em;
+    width: 1.2em;
+    height: 1.2em;
     flex-shrink: 0;
 }
 
@@ -791,15 +802,16 @@ h1 {
     box-shadow: 0 8px 20px var(--glow-color);
 }
 
-.terminal-link i {
+.terminal-link .icon {
     color: var(--primary-color);
-    font-size: 1.5em;
+    width: 1.5em;
+    height: 1.5em;
     margin-right: 15px;
     transition: color 0.3s ease;
     flex-shrink: 0;
 }
 
-.terminal-link:hover i {
+.terminal-link:hover .icon {
     color: white;
 }
 
@@ -847,8 +859,9 @@ h1 {
         font-size: 0.9em;
     }
 
-    .terminal-link i {
-        font-size: 1.2em;
+    .terminal-link .icon {
+        width: 1.2em;
+        height: 1.2em;
         margin-right: 10px;
     }
 
@@ -876,30 +889,15 @@ h1 {
         font-size: 0.85em;
     }
 
-    .terminal-link i {
-        font-size: 1.1em;
+    .terminal-link .icon {
+        width: 1.1em;
+        height: 1.1em;
         margin-right: 8px;
     }
 
     .terminal-link span {
         font-size: 0.85em;
     }
-}
-
-/* About Header Styles */
-.about-header {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    gap: 30px;
-    margin-bottom: 2rem;
-    flex-wrap: wrap;
-}
-
-.about-header h1 {
-    margin: 0;
-    flex: 1;
-    min-width: 300px;
 }
 
 /* Responsive adjustments */
@@ -931,15 +929,6 @@ h1 {
     align-items: flex-start;
 }
 
-.about-text {
-    flex: 1;
-}
-
-.about-text p {
-    margin-bottom: 1rem;
-    line-height: 1.6;
-}
-
 /* Responsive adjustments */
 @media (max-width: 768px) {
     .about-content {
@@ -957,76 +946,4 @@ h1 {
     .about-content {
         gap: 15px;
     }
-}
-
-/* Kategori bölümleri için stiller */
-.category-section {
-    margin-bottom: 3rem;
-}
-
-.category-header {
-    font-family: 'Space Grotesk', sans-serif;
-    font-size: 1.75rem;
-    font-weight: 600;
-    color: var(--text-color);
-    margin-bottom: 2rem;
-    position: relative;
-    display: inline-block;
-}
-
-.category-header::after {
-    content: '';
-    position: absolute;
-    left: 0;
-    bottom: -0.5rem;
-    width: 2rem;
-    height: 0.25rem;
-    background: linear-gradient(to right, var(--primary-color), var(--accent-color));
-    border-radius: 0.125rem;
-}
-
-.category-projects {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(min(100%, 400px), 1fr));
-    gap: 2rem;
-    margin: 0;
-}
-
-.project-link {
-    display: inline-flex;
-    align-items: center;
-    gap: 8px;
-    padding: 8px 16px;
-    background: var(--card-bg);
-    border: 1px solid var(--card-border);
-    color: var(--text-color);
-    text-decoration: none;
-    border-radius: var(--border-radius);
-    font-family: var(--font-secondary);
-    font-size: 0.9em;
-    margin-top: 10px;
-    transition: all 0.3s ease;
-}
-
-.project-link i {
-    color: var(--primary-color);
-    font-size: 1.1em;
-    transition: transform 0.3s ease;
-}
-
-.project-link:hover {
-    background: linear-gradient(
-        135deg,
-        var(--primary-color) 0%,
-        var(--secondary-color) 50%,
-        var(--accent-color) 100%
-    );
-    color: white;
-    transform: translateY(-2px);
-    box-shadow: 0 5px 15px var(--shadow-color);
-}
-
-.project-link:hover i {
-    color: white;
-    transform: translateX(3px);
 }
