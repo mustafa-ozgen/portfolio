@@ -176,6 +176,44 @@
                     "icon": "youtube"
                 }
             ]
+        },
+        "company": {
+            "title": {
+                "tr": "RigidPoly Fab - Sosyal Medya",
+                "en": "RigidPoly Fab - Social Media"
+            },
+            "links": [
+                {
+                    "name": "LinkedIn",
+                    "url": "https://www.linkedin.com/company/rigidpolyfab",
+                    "icon": "linkedin"
+                },
+                {
+                    "name": "YouTube",
+                    "url": "https://www.youtube.com/@RigidPolyFab",
+                    "icon": "youtube"
+                },
+                {
+                    "name": "X",
+                    "url": "https://x.com/rigidpolyfab",
+                    "icon": "x"
+                },
+                {
+                    "name": "Instagram",
+                    "url": "https://www.instagram.com/rigidpolyfab/",
+                    "icon": "instagram"
+                },
+                {
+                    "name": "Discord",
+                    "url": "https://discord.gg/HvVZfpGMCu",
+                    "icon": "discord"
+                },
+                {
+                    "name": "Email",
+                    "url": "mailto:hello@rigidpoly.com",
+                    "icon": "envelope"
+                }
+            ]
         }
     }
 } 
