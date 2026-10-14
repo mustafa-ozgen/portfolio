@@ -184,6 +184,11 @@
             },
             "links": [
                 {
+                    "name": "Website",
+                    "url": "https://rigidpoly.com/",
+                    "icon": "globe"
+                },
+                {
                     "name": "LinkedIn",
                     "url": "https://www.linkedin.com/company/rigidpolyfab",
                     "icon": "linkedin"
